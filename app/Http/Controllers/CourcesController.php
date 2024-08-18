@@ -116,26 +116,17 @@ class CourcesController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required',
         ]);
-        if ($request->hasFile('image')) {
-            // حذف الصورة القديمة إذا وجدت
-            if ($course->image) {
-                $oldImagePath = public_path('images/courses/' . $course->image);
-                if (file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                    Storage::delete($oldImagePath);
-                    $course->image = null;
-                    $course->save();
-                }
-            }
-        }
-            // حفظ الصورة الجديدة
-        $file_extintion = $request->image->getClientOriginalExtension();
-        $file_name = time() . '.' . $file_extintion;
-        $path = 'images/courses';
-        $request->image->move($path, $file_name);
-    
-            // تحديث مسار الصورة في قاعدة البيانات
-        $course->image = $Storage::url($path);
+       if ($request->hasFile('image') && $course->image) {
+        Storage::disk('public')->delete('courses/' . $course->image);
+    }
+
+    // حفظ الصورة الجديدة (إذا تم تحميل صورة جديدة)
+    if ($request->hasFile('image')) {
+        $path = 'courses/' . time() . '.' . $request->image->getClientOriginalExtension();
+         Storage::disk('public')->put($path, $request->image);;
+
+        // حفظ المسار الكامل للصورة في قاعدة البيانات
+        $course->image = Storage::disk('public')->url($path);
         $course->title = $request->title;
         $course->teacher=$request->teacher;
         $course->description = $request->description;
