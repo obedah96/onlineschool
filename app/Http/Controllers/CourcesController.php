@@ -127,6 +127,7 @@ class CourcesController extends Controller
     
             // حفظ المسار الكامل للصورة في قاعدة البيانات
             $course->image = Storage::disk('public')->url($path);
+        }
             $course->title = $request->title;
             $course->teacher=$request->teacher;
             $course->description = $request->description;
@@ -142,8 +143,7 @@ class CourcesController extends Controller
             return response()->json([
                 'message' => 'course updated',
                 'course : ' => $course
-            ]);
-        }
+            ]);   
     }
     /**
      * Remove the specified resource from storage.
