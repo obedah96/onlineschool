@@ -63,7 +63,7 @@ class CourcesController extends Controller
             'title' => $request->title,
             'teacher' => $request->teacher,
             'description' => $request->description,
-            'image'=>$file_name,
+            'image'=>Storage::url($path);,
             'price'=>$request->price,
             'course_outline'=>$request->course_outline,
             'duration_in_session'=>$request->duration_in_session,
