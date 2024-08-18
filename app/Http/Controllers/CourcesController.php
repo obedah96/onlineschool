@@ -58,6 +58,7 @@ class CourcesController extends Controller
 
         // حفظ الصورة باستخدام حزمة Storage
         Storage::disk('public')->put($path, $request->image);
+        $imageUrl = Storage::url($path);
         $course = Cources::create([
             'title' => $request->title,
             'teacher' => $request->teacher,
@@ -73,7 +74,8 @@ class CourcesController extends Controller
         ]);
         return response()->json([
                                 'message' => 'Course created successfully'
-                                ,'data'=>$course
+                                ,'data'=>$course,
+                                'urlImage'=>$imageUrl
                                 ]);
     } 
 
