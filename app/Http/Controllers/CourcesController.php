@@ -63,7 +63,7 @@ class CourcesController extends Controller
             'title' => $request->title,
             'teacher' => $request->teacher,
             'description' => $request->description,
-            'image'=>Storage::url($path);,
+            'image'=>Storage::url($path),
             'price'=>$request->price,
             'course_outline'=>$request->course_outline,
             'duration_in_session'=>$request->duration_in_session,
@@ -74,8 +74,7 @@ class CourcesController extends Controller
         ]);
         return response()->json([
                                 'message' => 'Course created successfully'
-                                ,'data'=>$course,
-                                'urlImage'=>$imageUrl
+                                ,'data'=>$course
                                 ]);
     } 
 
@@ -136,7 +135,7 @@ class CourcesController extends Controller
         $request->image->move($path, $file_name);
     
             // تحديث مسار الصورة في قاعدة البيانات
-        $course->image = $file_name;
+        $course->image = $Storage::url($path);
         $course->title = $request->title;
         $course->teacher=$request->teacher;
         $course->description = $request->description;
@@ -163,6 +162,11 @@ class CourcesController extends Controller
         if (!$course) {
             return response()->json(['message' => 'course not found'], 404);
         }
+        $file_extintion = $course->image->getClientOriginalExtension();
+        $file_name = time() . '.' . $file_extintion;
+        $path = 'courses/' . $file_name;
+        // حذف الصورة
+        Storage::disk('public')->delete($path);
         $course->forceDelete();
         return response()->json(['message' => 'course deleted']);
     }
