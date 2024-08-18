@@ -123,10 +123,8 @@ class CourcesController extends Controller
         // حفظ الصورة الجديدة (إذا تم تحميل صورة جديدة)
         if ($request->hasFile('image')) {
             $path = 'courses/' . time() . '.' . $request->image->getClientOriginalExtension();
-             Storage::disk('public')->put($path, $request->image);;
-    
-            // حفظ المسار الكامل للصورة في قاعدة البيانات
-            $course->image = Storage::disk('public')->url($path);
+             Storage::disk('public')->put($path, $request->image);
+            $course->image=Storage::url($path);
         }
             $course->title = $request->title;
             $course->teacher=$request->teacher;
