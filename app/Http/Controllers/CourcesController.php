@@ -52,11 +52,12 @@ class CourcesController extends Controller
             'description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
-        $file_extintion=$request->image->getClientOriginalExtension();
-        $file_name=time().'.'.$file_extintion;
-        $path='images/courses';
-        
-        $request->image->move($path,$file_name);
+        $file_extintion = $request->image->getClientOriginalExtension();
+        $file_name = time() . '.' . $file_extintion;
+        $path = 'courses/' . $file_name; // مسار نسبي داخل الدليل public
+
+        // حفظ الصورة باستخدام حزمة Storage
+        Storage::disk('public')->put($path, $request->image);
         $course = Cources::create([
             'title' => $request->title,
             'teacher' => $request->teacher,
