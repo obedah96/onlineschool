@@ -156,18 +156,20 @@ class CourcesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request)
-    {
-        $course = Cources::find($request->id);
-        if (!$course) {
-            return response()->json(['message' => 'course not found'], 404);
-        }
-        $file_extintion = $course->image->getClientOriginalExtension();
-        $file_name = time() . '.' . $file_extintion;
-        $path = 'courses/' . $file_name;
-        // حذف الصورة
-        Storage::disk('public')->delete($path);
-        $course->forceDelete();
-        return response()->json(['message' => 'course deleted']);
+   public function destroy(Request $request)
+{
+    $course = Cources::find($request->id);
+    if (!$course) {
+        return response()->json(['message' => 'course not found'], 404);
     }
+
+    $imagePath = $course->image;
+
+    if (Storage::disk('public')->exists($imagePath)) {
+        Storage::disk('public')->delete($imagePath);
+    }
+
+    $course->forceDelete();
+    return response()->json(['message' => 'course deleted']);
+}
 }
