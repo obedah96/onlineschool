@@ -110,7 +110,7 @@ class BlogsController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request)
-{   
+    {   
         $blog = Blogs::find($request->id);
         if (!$blog) {
             return response()->json(['message' => 'لم يتم العثور على المدونة'], 404);
@@ -128,11 +128,11 @@ class BlogsController extends Controller
         // حفظ الصورة الجديدة (إذا تم تحميل صورة جديدة)
         if ($request->hasFile('image')) {
             $path = 'blogs/' . time() . '.' . $request->image->getClientOriginalExtension();
-            Storage::disk('public')->put($path, $request->image);;
-
+            Storage::disk('public')->put($path, $request->image);
     
             // تحديث مسار الصورة في قاعدة البيانات
         $blog->ImagePath =Storage::disk('public')->url($path);
+        }
         $blog->title = $request->title;
         $blog->description = $request->description;
     
