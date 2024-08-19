@@ -34,14 +34,14 @@ class BlogsController extends Controller
                 }
             } else {
                 // إذا لم يتم تمرير أي قيمة لـ id
-                $blogs = Blogs::paginate(5);
+                $blog = Blogs::paginate(5);
                 $jsonData = [
                     'status' => 'success',
-                    'data' => $blogs,
+                    'data' => $blog,
                 ];
             }
             
-            return response()->json($blogs);
+            return response()->json($blog);
             
         }
 
