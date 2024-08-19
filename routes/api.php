@@ -8,9 +8,7 @@ use App\Http\Controllers\SubscribersController;
 use App\Http\Controllers\CourcesController;
 use App\Http\Controllers\CourcesTimeController;
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/',function(){return "welcome to our api";});
 Route::post('blogs',[BlogsController::class,'create']);
 Route::get('blogs',[BlogsController::class,'index']);
 Route::post('blogs/update',[BlogsController::class,'update']);
