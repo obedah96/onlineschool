@@ -43,20 +43,20 @@ class SubscribersController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $request->validate(['email' => 'required',]);
+        subscribers::create([
+            'email'=>$request->email]);
+        return response()->json(['message'=>'subscriber created successfully'],201);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {   
-        $request->validate(['email' => 'required',]);
-        subscribers::create([
-            'email'=>$request->email]);
-        return response()->json(['message'=>'subscriber created successfully'],201);
+        
     }
 
     /**

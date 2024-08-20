@@ -7,29 +7,39 @@ servers:
   -
     url: 'http://localhost'
 paths:
-  /api/user:
-    get:
-      summary: ''
-      operationId: getApiUser
+  /api/blogs:
+    post:
+      summary: 'Show the form for creating a new resource.'
+      operationId: showTheFormForCreatingANewResource
       description: ''
       parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
+      responses: {  }
       tags:
         - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: veniam
+                description:
+                  type: string
+                  description: ''
+                  example: cum
+                image:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+              required:
+                - title
+                - description
+                - image
       security: []
-  /api/blogs:
     get:
       summary: 'Display a listing of the resource.'
       operationId: displayAListingOfTheResource
@@ -135,38 +145,6 @@ paths:
       tags:
         - Endpoints
       security: []
-    post:
-      summary: 'Store a newly created resource in storage.'
-      operationId: storeANewlyCreatedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                  description: ''
-                  example: autem
-                description:
-                  type: string
-                  description: ''
-                  example: id
-                image:
-                  type: string
-                  format: binary
-                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-              required:
-                - title
-                - description
-                - image
-      security: []
     delete:
       summary: 'Remove the specified resource from storage.'
       operationId: removeTheSpecifiedResourceFromStorage
@@ -195,16 +173,38 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ne
+                  example: zyrxgixpxiynchywmxbcwsm
                 description:
                   type: string
                   description: ''
-                  example: aliquid
+                  example: sed
               required:
                 - title
                 - description
       security: []
   /api/subscribers:
+    post:
+      summary: 'Show the form for creating a new resource.'
+      operationId: showTheFormForCreatingANewResource
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: qui
+              required:
+                - email
+      security: []
     get:
       summary: 'Display a listing of the resource.'
       operationId: displayAListingOfTheResource
@@ -310,28 +310,6 @@ paths:
       tags:
         - Endpoints
       security: []
-    post:
-      summary: 'Store a newly created resource in storage.'
-      operationId: storeANewlyCreatedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: ''
-                  example: ut
-              required:
-                - email
-      security: []
     delete:
       summary: 'Remove the specified resource from storage.'
       operationId: removeTheSpecifiedResourceFromStorage
@@ -360,7 +338,7 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: quo
+                  example: ab
               required:
                 - email
       security: []
@@ -383,11 +361,11 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: dolores
+                  example: vel
                 description:
                   type: string
                   description: ''
-                  example: qui
+                  example: aut
                 image:
                   type: string
                   format: binary
@@ -471,11 +449,11 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: upjkcyxoxwmkpsjntrwk
+                  example: slnqctpkj
                 description:
                   type: string
                   description: ''
-                  example: est
+                  example: magni
               required:
                 - title
                 - description
@@ -496,13 +474,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        200:
+        500:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: ''
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
       tags:
         - Endpoints
       security: []

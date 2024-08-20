@@ -52,16 +52,18 @@ class CourcesController extends Controller
             'description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
-        $file_extintion=$request->image->getClientOriginalExtension();
-        $file_name=time().'.'.$file_extintion;
-        $path='images/courses';
-        
-        $request->image->move($path,$file_name);
+        $file_extintion = $request->image->getClientOriginalExtension();
+        $file_name = time() . '.' . $file_extintion;
+        $path = 'courses/' . $file_name; // مسار نسبي داخل الدليل public
+
+        // حفظ الصورة باستخدام حزمة Storage
+        Storage::disk('public')->put($path, $request->image);
+        $imageUrl = Storage::url($path);
         $course = Cources::create([
             'title' => $request->title,
             'teacher' => $request->teacher,
             'description' => $request->description,
-            'image'=>$file_name,
+            'image'=>Storage::url($path),
             'price'=>$request->price,
             'course_outline'=>$request->course_outline,
             'duration_in_session'=>$request->duration_in_session,
@@ -105,62 +107,61 @@ class CourcesController extends Controller
      */
     public function update(Request $request)
     {
-        $course = Cources::find($request->id);
-        if (!$course) {
-            return response()->json(['message' => 'course not found'], 404);
+            $course = Cources::find($request->id);
+            if (!$course) {
+                return response()->json(['message' => 'course not found'], 404);
+            }
+
+            $request->validate([
+                'title' => 'required|string|max:255',
+                'description' => 'required',
+            ]);
+        if ($request->hasFile('image') && $course->image) {
+            Storage::disk('public')->delete('courses/' . $course->image);
         }
 
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required',
-        ]);
+        // حفظ الصورة الجديدة (إذا تم تحميل صورة جديدة)
         if ($request->hasFile('image')) {
-            // حذف الصورة القديمة إذا وجدت
-            if ($course->image) {
-                $oldImagePath = public_path('images/courses/' . $course->image);
-                if (file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                    Storage::delete($oldImagePath);
-                    $course->image = null;
-                    $course->save();
-                }
-            }
+            $path = 'courses/' . time() . '.' . $request->image->getClientOriginalExtension();
+            Storage::disk('public')->put($path, $request->image);;
+
+            // حفظ المسار الكامل للصورة في قاعدة البيانات
+            $course->image = Storage::disk('public')->url($path);
+            $course->title = $request->title;
+            $course->teacher=$request->teacher;
+            $course->description = $request->description;
+            $course->price=$request->price;
+            $course->course_outline=$request->course_outline;
+            $course->duration_in_session=$request->duration_in_session;
+            $course->course_start_date=$request->course_start_date;
+            $course->min_age=$request->min_age;
+            $course->max_age=$request->max_age;
+        
+            $course->save();
+            // إرجاع استجابة JSON تحتوي على البيانات المحدثة للمدونة
+            return response()->json([
+                'message' => 'course updated',
+                'course : ' => $course
+            ]);
         }
-            // حفظ الصورة الجديدة
-        $file_extintion = $request->image->getClientOriginalExtension();
-        $file_name = time() . '.' . $file_extintion;
-        $path = 'images/courses';
-        $request->image->move($path, $file_name);
-    
-            // تحديث مسار الصورة في قاعدة البيانات
-        $course->image = $file_name;
-        $course->title = $request->title;
-        $course->teacher=$request->teacher;
-        $course->description = $request->description;
-        $course->price=$request->price;
-        $course->course_outline=$request->course_outline;
-        $course->duration_in_session=$request->duration_in_session;
-        $course->course_start_date=$request->course_start_date;
-        $course->min_age=$request->min_age;
-        $course->max_age=$request->max_age;
-    
-        $course->save();
-        // إرجاع استجابة JSON تحتوي على البيانات المحدثة للمدونة
-        return response()->json([
-            'message' => 'course updated',
-            'course : ' => $course
-        ]);
     }
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request)
-    {
-        $course = Cources::find($request->id);
-        if (!$course) {
-            return response()->json(['message' => 'course not found'], 404);
-        }
-        $course->forceDelete();
-        return response()->json(['message' => 'course deleted']);
+   public function destroy(Request $request)
+{
+    $course = Cources::find($request->id);
+    if (!$course) {
+        return response()->json(['message' => 'course not found'], 404);
     }
+
+    $imagePath = $course->image;
+
+    if (Storage::disk('public')->exists($imagePath)) {
+        Storage::disk('public')->delete($imagePath);
+    }
+
+    $course->forceDelete();
+    return response()->json(['message' => 'course deleted']);
+}
 }

@@ -5,38 +5,58 @@ description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/user
+      - POST
+    uri: api/blogs
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Show the form for creating a new resource.'
       description: ''
       authenticated: false
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: 'http://localhost:3000'
-          access-control-allow-credentials: 'true'
-        description: null
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: veniam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: cum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      title: veniam
+      description: cum
+    fileParameters:
+      image: null
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -86,18 +106,18 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/blogs
+    uri: api/blogs/update
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: 'Update the specified resource in storage.'
       description: ''
       authenticated: false
       custom: []
     headers:
-      Content-Type: multipart/form-data
+      Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -106,9 +126,9 @@ endpoints:
     bodyParameters:
       title:
         name: title
-        description: ''
+        description: 'Must not be greater than 255 characters.'
         required: true
-        example: autem
+        example: zyrxgixpxiynchywmxbcwsm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -117,25 +137,15 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: id
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      image:
-        name: image
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: true
-        example: null
-        type: file
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
     cleanBodyParameters:
-      title: autem
-      description: id
-    fileParameters:
-      image: null
+      title: zyrxgixpxiynchywmxbcwsm
+      description: sed
+    fileParameters: []
     responses: []
     responseFields: []
     auth: []
@@ -176,13 +186,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/blogs/update
+    uri: api/subscribers
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
+      title: 'Show the form for creating a new resource.'
       description: ''
       authenticated: false
       custom: []
@@ -194,27 +204,17 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      title:
-        name: title
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: ne
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      description:
-        name: description
+      email:
+        name: email
         description: ''
         required: true
-        example: aliquid
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: ne
-      description: aliquid
+      email: qui
     fileParameters: []
     responses: []
     responseFields: []
@@ -266,46 +266,6 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/subscribers
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: ''
-        required: true
-        example: ut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email: ut
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
     uri: api/subscribers/update
     metadata:
       groupName: Endpoints
@@ -328,13 +288,13 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: quo
+        example: ab
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: quo
+      email: ab
     fileParameters: []
     responses: []
     responseFields: []
@@ -398,7 +358,7 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: dolores
+        example: vel
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -407,7 +367,7 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: qui
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -422,8 +382,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: dolores
-      description: qui
+      title: vel
+      description: aut
     fileParameters:
       image: null
     responses: []
@@ -498,7 +458,7 @@ endpoints:
         name: title
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: upjkcyxoxwmkpsjntrwk
+        example: slnqctpkj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -507,14 +467,14 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: est
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: upjkcyxoxwmkpsjntrwk
-      description: est
+      title: slnqctpkj
+      description: magni
     fileParameters: []
     responses: []
     responseFields: []
@@ -608,11 +568,14 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: ''
+        status: 500
+        content: |-
+          {
+              "message": "Server Error"
+          }
         headers:
-          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
+          content-type: application/json
           access-control-allow-origin: 'http://localhost:3000'
           access-control-allow-credentials: 'true'
         description: null

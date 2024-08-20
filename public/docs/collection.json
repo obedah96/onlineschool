@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "6dd4bc4f-d6ee-45a4-852c-7dc9ad463d1e",
+        "_postman_id": "61b3f73a-2379-4335-8973-81165e155752",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -20,56 +20,53 @@
             "description": "",
             "item": [
                 {
-                    "name": "GET api\/user",
+                    "name": "Show the form for creating a new resource.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/user",
+                            "path": "api\/blogs",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/user"
+                            "raw": "{{baseUrl}}\/api\/blogs"
                         },
-                        "method": "GET",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "title",
+                                    "value": "veniam",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "description",
+                                    "value": "cum",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "image",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
                         }
                     },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "http:\/\/localhost:3000"
-                                },
-                                {
-                                    "key": "access-control-allow-credentials",
-                                    "value": "true"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
+                    "response": []
                 },
                 {
                     "name": "Display a listing of the resource.",
@@ -124,19 +121,19 @@
                     ]
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Update the specified resource in storage.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/blogs",
+                            "path": "api\/blogs\/update",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/blogs"
+                            "raw": "{{baseUrl}}\/api\/blogs\/update"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "multipart\/form-data"
+                                "value": "application\/json"
                             },
                             {
                                 "key": "Accept",
@@ -144,26 +141,8 @@
                             }
                         ],
                         "body": {
-                            "mode": "formdata",
-                            "formdata": [
-                                {
-                                    "key": "title",
-                                    "value": "autem",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "description",
-                                    "value": "id",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "image",
-                                    "src": [],
-                                    "type": "file"
-                                }
-                            ]
+                            "mode": "raw",
+                            "raw": "{\"title\":\"zyrxgixpxiynchywmxbcwsm\",\"description\":\"sed\"}"
                         },
                         "description": "",
                         "auth": {
@@ -201,13 +180,13 @@
                     "response": []
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Show the form for creating a new resource.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/blogs\/update",
+                            "path": "api\/subscribers",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/blogs\/update"
+                            "raw": "{{baseUrl}}\/api\/subscribers"
                         },
                         "method": "POST",
                         "header": [
@@ -222,7 +201,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"ne\",\"description\":\"aliquid\"}"
+                            "raw": "{\"email\":\"qui\"}"
                         },
                         "description": "",
                         "auth": {
@@ -284,37 +263,6 @@
                     ]
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/subscribers",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/subscribers"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"email\":\"ut\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
                     "name": "Update the specified resource in storage.",
                     "request": {
                         "url": {
@@ -336,7 +284,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"quo\"}"
+                            "raw": "{\"email\":\"ab\"}"
                         },
                         "description": "",
                         "auth": {
@@ -398,13 +346,13 @@
                             "formdata": [
                                 {
                                     "key": "title",
-                                    "value": "dolores",
+                                    "value": "vel",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "qui",
+                                    "value": "aut",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -496,7 +444,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"upjkcyxoxwmkpsjntrwk\",\"description\":\"est\"}"
+                            "raw": "{\"title\":\"slnqctpkj\",\"description\":\"magni\"}"
                         },
                         "description": "",
                         "auth": {
@@ -591,12 +539,12 @@
                         {
                             "header": [
                                 {
-                                    "key": "content-type",
-                                    "value": "text\/html; charset=UTF-8"
-                                },
-                                {
                                     "key": "cache-control",
                                     "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -607,8 +555,8 @@
                                     "value": "true"
                                 }
                             ],
-                            "code": 200,
-                            "body": "",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]

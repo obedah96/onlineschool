@@ -34,14 +34,14 @@ class BlogsController extends Controller
                 }
             } else {
                 // إذا لم يتم تمرير أي قيمة لـ id
-                $blogs = Blogs::paginate(5);
+                $blog = Blogs::paginate(5);
                 $jsonData = [
                     'status' => 'success',
-                    'data' => $blogs,
+                    'data' => $blog,
                 ];
             }
             
-            return response()->json($blogs);
+            return response()->json($blog);
             
         }
 
@@ -51,18 +51,7 @@ class BlogsController extends Controller
      */
     public function create(Request $request)
     {
-     
-    }
-    
-
-    /**
-     * Store a newly created resource in storage.
-     */
-
-
-    public function store(Request $request)
-    {
-        $request->validate([
+         $request->validate([
             'title' => 'required',
             'description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
@@ -70,9 +59,9 @@ class BlogsController extends Controller
 
         $file_extintion=$request->image->getClientOriginalExtension();
         $file_name=time().'.'.$file_extintion;
-        $path='images/blogs';
+        $path = 'blogs/' . $file_name;
         // حفظ الصورة في المجلد public/images/blogs
-        $request->image->move($path,$file_name);
+         Storage::disk('public')->put($path, $request->image);
         
 
         // حفظ البيانات في قاعدة البيانات
@@ -87,6 +76,17 @@ class BlogsController extends Controller
             'message' => 'تم حفظ الصورة والبيانات بنجاح',
             
         ], 201);
+    }
+    
+
+    /**
+     * Store a newly created resource in storage.
+     */
+
+
+    public function store(Request $request)
+    {
+        
     }
 
 
@@ -110,7 +110,7 @@ class BlogsController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request)
-{   
+    {   
         $blog = Blogs::find($request->id);
         if (!$blog) {
             return response()->json(['message' => 'لم يتم العثور على المدونة'], 404);
@@ -121,26 +121,18 @@ class BlogsController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required',
         ]);
-        if ($request->hasFile('image')) {
-            // حذف الصورة القديمة إذا وجدت
-            if ($blog->ImagePath) {
-                $oldImagePath = public_path('images/blogs/' . $blog->ImagePath);
-                if (file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                    Storage::delete($oldImagePath);
-                    $blog->ImagePath = null;
-                    $blog->save();
-                }
-            }
+        if ($request->hasFile('image') && $blog->ImagePath) {
+            Storage::disk('public')->delete('blogs/' . $blog->ImagePath);
         }
-            // حفظ الصورة الجديدة
-        $file_extintion = $request->image->getClientOriginalExtension();
-        $file_name = time() . '.' . $file_extintion;
-        $path = 'images/blogs';
-        $request->image->move($path, $file_name);
+
+        // حفظ الصورة الجديدة (إذا تم تحميل صورة جديدة)
+        if ($request->hasFile('image')) {
+            $path = 'blogs/' . time() . '.' . $request->image->getClientOriginalExtension();
+            Storage::disk('public')->put($path, $request->image);
     
             // تحديث مسار الصورة في قاعدة البيانات
-        $blog->ImagePath = $file_name;
+        $blog->ImagePath =Storage::disk('public')->url($path);
+        }
         $blog->title = $request->title;
         $blog->description = $request->description;
     
@@ -162,6 +154,11 @@ class BlogsController extends Controller
             $blog = Blogs::find($request->id);
             if (!$blog) {
                 return response()->json(['message' => 'المدونة غير موجودة'], 404);
+            }
+            $imagePath = blog->ImagePath;
+
+            if (Storage::disk('public')->exists($imagePath)) {
+                Storage::disk('public')->delete($imagePath);
             }
 
             // حذف المدونة
