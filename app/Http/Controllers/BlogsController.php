@@ -155,11 +155,6 @@ class BlogsController extends Controller
             if (!$blog) {
                 return response()->json(['message' => 'المدونة غير موجودة'], 404);
             }
-            $imagePath = blog->ImagePath;
-
-            if (Storage::disk('public')->exists($imagePath)) {
-                Storage::disk('public')->delete($imagePath);
-            }
 
             // حذف المدونة
             $blog->forceDelete();
