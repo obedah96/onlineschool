@@ -12,7 +12,8 @@ class Cources_time extends Model
         'course_id',
         'day_of_month',
         'start_time',
-        'end_time'
+        'end_time',
+        'courseMonth'
     ];
 
     public function course()

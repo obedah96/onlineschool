@@ -16,9 +16,11 @@ class CourcesTimeController extends Controller
         $courseId=$request->course_id;
         $course_name=Cources::find($request->course_id);
         $dayOfMonth=$request->day_of_month;
+        $courseMonth=$request->course_month;
         $courseTimes = Cources_time::where('course_id', $courseId)
-                         ->where('day_of_month', $dayOfMonth)
-                         ->get();
+                                    ->where('day_of_month', $dayOfMonth)
+                                    ->where('courseMonth', $courseMonth)
+                                    ->get();
     return response()->json([
                             'course name'=>$course_name->title,
                             'data'=>$courseTimes,
@@ -30,7 +32,14 @@ class CourcesTimeController extends Controller
      */
     public function create(Request $request)
     {
-        $course_time=Cources_time::create($request->only(['course_id', 'day_of_month', 'start_time','end_time']));
+        $request->validate([
+            'course_id' => 'required',
+            'courseMonth' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'day_of_month' => 'required'
+        ]);
+        $course_time=Cources_time::create($request->only(['course_id', 'courseMonth','day_of_month', 'start_time','end_time']));
         $course_name=Cources::find($request->course_id);
         return response()->json([
                         'message'=>'course time created ',
@@ -67,9 +76,9 @@ class CourcesTimeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        $newTime=Cources_time::find($request->id);
+        $newTime=Cources_time::find($id);
         $newTime->start_time=$request->start_time;
         $newTime->end_time=$request->end_time;
         $newTime->save();

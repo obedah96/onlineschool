@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blogs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class BlogsController extends Controller
 {
@@ -51,32 +52,71 @@ class BlogsController extends Controller
      */
     public function create(Request $request)
     {
-         $request->validate([
+        $request->validate([
             'title' => 'required',
             'description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
-
-        $file_extintion=$request->image->getClientOriginalExtension();
-        $file_name=time().'.'.$file_extintion;
-        $path = 'blogs/' . $file_name;
-        // حفظ الصورة في المجلد public/images/blogs
-         Storage::disk('public')->put($path, $request->image);
+        if ($request->hasFile('image')) {
+            // تحديد المسار النسبي داخل مجلد التخزين
+            $directory = 'uploads/images/blogs';
+            if (!Storage::disk('public')->exists($directory)) {
+                Storage::disk('public')->makeDirectory($directory);
+            }
+            
+            
+            // الحصول على الملف من الطلب
+            $image = $request->file('image');
         
+            // تحديد اسم الملف
+            $fileName = time() . '.' . $image->getClientOriginalExtension();
+        
+            // إنشاء المسار الكامل داخل مجلد التخزين
+            $path = $directory . '/' . $fileName;
+        
+            // حفظ الصورة في المجلد المحدد داخل التخزين باستخدام Storage facade
+            Storage::disk('public')->put($path, file_get_contents($image));}
+        /*
+        if ($request->hasFile('image')) {
+            // Get the file from the request
+            $directory = public_path('images');
 
-        // حفظ البيانات في قاعدة البيانات
+            // Create the directory if it doesn't exist
+            if (!file_exists($directory)) {
+                mkdir($directory, 0775, true);
+            }
+    
+            // Get the file from the request
+            $image = $request->file('image');
+    
+            // Define a file name
+            $fileName = time() . '.' . $image->getClientOriginalExtension();
+    
+            // Save the file to the public folder
+            $path = $image->move($directory, $fileName);
+        }
+            */
+        /*$file_extension = $request->file('image')->getClientOriginalExtension();
+        $file_name = time() . '.' . $file_extension;
+        $path = 'blogs/' . $file_name;
+
+        // استخدام Storage facade لتخزين الصورة
+        Storage::disk('public')->put($path, file_get_contents($request->file('image')));
+        */
+        // حفظ المسار في قاعدة البيانات
         Blogs::create([
             'title' => $request->title,
             'description' => $request->description,
-            'ImagePath' => $file_name,
+            'ImagePath' => $path,
         ]);
 
-        // إرجاع استجابة JSON
         return response()->json([
             'message' => 'تم حفظ الصورة والبيانات بنجاح',
-            
         ], 201);
     }
+
+
+
     
 
     /**
@@ -109,9 +149,9 @@ class BlogsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {   
-        $blog = Blogs::find($request->id);
+        $blog = Blogs::find($id);
         if (!$blog) {
             return response()->json(['message' => 'لم يتم العثور على المدونة'], 404);
         }

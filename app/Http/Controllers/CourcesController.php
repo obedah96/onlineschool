@@ -54,16 +54,14 @@ class CourcesController extends Controller
         ]);
         $file_extintion = $request->image->getClientOriginalExtension();
         $file_name = time() . '.' . $file_extintion;
-        $path = 'courses/' . $file_name; // مسار نسبي داخل الدليل public
-
-        // حفظ الصورة باستخدام حزمة Storage
+        $path = 'images/courses/' . $file_name;   
         Storage::disk('public')->put($path, $request->image);
-        $imageUrl = Storage::url($path);
+        $imageUrl = asset($path); 
         $course = Cources::create([
             'title' => $request->title,
             'teacher' => $request->teacher,
             'description' => $request->description,
-            'image'=>Storage::url($path),
+            'image'=>$imageUrl,
             'price'=>$request->price,
             'course_outline'=>$request->course_outline,
             'duration_in_session'=>$request->duration_in_session,
@@ -105,9 +103,10 @@ class CourcesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
-    {
-        $course = Cources::find($request->id);
+    public function update(Request $request,$id)
+    {   
+        
+        $course = Cources::find($id);
         if (!$course) {
             return response()->json(['message' => 'course not found'], 404);
         }
@@ -132,7 +131,7 @@ class CourcesController extends Controller
         $file_extintion = $request->image->getClientOriginalExtension();
         $file_name = time() . '.' . $file_extintion;
         $path = 'images/courses';
-        $request->image->move($path, $file_name);
+        Storage::disk('public')->put($path, $request->image);
     
             // تحديث مسار الصورة في قاعدة البيانات
         $course->image = $file_name;

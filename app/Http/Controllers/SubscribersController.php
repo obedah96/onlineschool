@@ -78,19 +78,20 @@ class SubscribersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {   $request->validate(['email' => 'required',]);
-        if($request->has('id'))
-        {
-            $sub=subscribers::find($request->id);
-            $sub->email=$request->email;
-            $sub->save();
-        }
-        else{
-            return response()->json(['message'=>'the subscriber not found']);
-            }
-            return response()->json(['message'=>'update done','sub'=>$sub]);
         
+            $sub=subscribers::find($id);
+            if(!$sub){
+                return response()->json(['message'=>'the subscriber not found']);
+            }
+        else{
+            $sub->email=
+            $request->email;
+            $sub->save();
+            return response()->json(['message'=>'update done','sub'=>$sub]);
+            }
+            
     }
 
     /**

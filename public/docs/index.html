@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
+        var tryItOutBaseUrl = "https://onlineschool-production.up.railway.app";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -77,8 +77,8 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-blogs">
                                 <a href="#endpoints-GETapi-blogs">Display a listing of the resource.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-blogs-update">
-                                <a href="#endpoints-POSTapi-blogs-update">Update the specified resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-blogs--id-">
+                                <a href="#endpoints-PUTapi-blogs--id-">Update the specified resource in storage.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-blogs">
                                 <a href="#endpoints-DELETEapi-blogs">Remove the specified resource from storage.</a>
@@ -89,35 +89,59 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-subscribers">
                                 <a href="#endpoints-GETapi-subscribers">Display a listing of the resource.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-subscribers-update">
-                                <a href="#endpoints-POSTapi-subscribers-update">Update the specified resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-subscribers">
+                                <a href="#endpoints-PUTapi-subscribers">Update the specified resource in storage.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-subscribers">
                                 <a href="#endpoints-DELETEapi-subscribers">Remove the specified resource from storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-cources">
-                                <a href="#endpoints-POSTapi-cources">Show the form for creating a new resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-courses">
+                                <a href="#endpoints-POSTapi-courses">Show the form for creating a new resource.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-cources">
-                                <a href="#endpoints-GETapi-cources">Display a listing of the resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-courses">
+                                <a href="#endpoints-GETapi-courses">Display a listing of the resource.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-cources-update">
-                                <a href="#endpoints-POSTapi-cources-update">Update the specified resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-courses">
+                                <a href="#endpoints-PUTapi-courses">Update the specified resource in storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-cources">
-                                <a href="#endpoints-DELETEapi-cources">Remove the specified resource from storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-courses">
+                                <a href="#endpoints-DELETEapi-courses">Remove the specified resource from storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-cources_time">
-                                <a href="#endpoints-POSTapi-cources_time">Show the form for creating a new resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-courses_time">
+                                <a href="#endpoints-POSTapi-courses_time">Show the form for creating a new resource.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-cources_time">
-                                <a href="#endpoints-GETapi-cources_time">Display a listing of the resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-courses_time">
+                                <a href="#endpoints-GETapi-courses_time">Display a listing of the resource.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-cources_time-update">
-                                <a href="#endpoints-POSTapi-cources_time-update">Update the specified resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-courses_time">
+                                <a href="#endpoints-PUTapi-courses_time">Update the specified resource in storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-cources_time">
-                                <a href="#endpoints-DELETEapi-cources_time">Remove the specified resource from storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-courses_time">
+                                <a href="#endpoints-DELETEapi-courses_time">Remove the specified resource from storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-guest_users">
+                                <a href="#endpoints-POSTapi-guest_users">Show the form for creating a new resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-guest_users">
+                                <a href="#endpoints-GETapi-guest_users">Display a listing of the resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-guest_users">
+                                <a href="#endpoints-PUTapi-guest_users">Update the specified resource in storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-guest_users">
+                                <a href="#endpoints-DELETEapi-guest_users">Remove the specified resource from storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-free_lessons">
+                                <a href="#endpoints-POSTapi-free_lessons">Show the form for creating a new resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-free_lessons">
+                                <a href="#endpoints-GETapi-free_lessons">Display a listing of the resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-free_lessons">
+                                <a href="#endpoints-PUTapi-free_lessons">Update the specified resource in storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-free_lessons">
+                                <a href="#endpoints-DELETEapi-free_lessons">Remove the specified resource from storage.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -130,7 +154,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 20, 2024</li>
+        <li>Last updated: August 23, 2024</li>
     </ul>
 </div>
 
@@ -139,7 +163,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>https://onlineschool-production.up.railway.app</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -165,17 +189,17 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/blogs" \
+    "https://onlineschool-production.up.railway.app/api/blogs" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "title=veniam"\
-    --form "description=cum"\
-    --form "image=@C:\Users\obedah\AppData\Local\Temp\phpB785.tmp" </code></pre></div>
+    --form "title=sed"\
+    --form "description=ipsa"\
+    --form "image=@C:\Users\obedah\AppData\Local\Temp\php4CD.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/blogs"
+    "https://onlineschool-production.up.railway.app/api/blogs"
 );
 
 const headers = {
@@ -184,8 +208,8 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('title', 'veniam');
-body.append('description', 'cum');
+body.append('title', 'sed');
+body.append('description', 'ipsa');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -274,10 +298,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-blogs"
-               value="veniam"
+               value="sed"
                data-component="body">
     <br>
-<p>Example: <code>veniam</code></p>
+<p>Example: <code>sed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -285,10 +309,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-blogs"
-               value="cum"
+               value="ipsa"
                data-component="body">
     <br>
-<p>Example: <code>cum</code></p>
+<p>Example: <code>ipsa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
@@ -299,7 +323,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\obedah\AppData\Local\Temp\phpB785.tmp</code></p>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\obedah\AppData\Local\Temp\php4CD.tmp</code></p>
         </div>
         </form>
 
@@ -316,14 +340,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/blogs" \
+    --get "https://onlineschool-production.up.railway.app/api/blogs" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/blogs"
+    "https://onlineschool-production.up.railway.app/api/blogs"
 );
 
 const headers = {
@@ -355,10 +379,10 @@ access-control-allow-credentials: true
 <code class="language-json" style="max-height: 300px;">{
     &quot;current_page&quot;: 1,
     &quot;data&quot;: [],
-    &quot;first_page_url&quot;: &quot;http://localhost/api/blogs?page=1&quot;,
+    &quot;first_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs?page=1&quot;,
     &quot;from&quot;: null,
     &quot;last_page&quot;: 1,
-    &quot;last_page_url&quot;: &quot;http://localhost/api/blogs?page=1&quot;,
+    &quot;last_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs?page=1&quot;,
     &quot;links&quot;: [
         {
             &quot;url&quot;: null,
@@ -366,7 +390,7 @@ access-control-allow-credentials: true
             &quot;active&quot;: false
         },
         {
-            &quot;url&quot;: &quot;http://localhost/api/blogs?page=1&quot;,
+            &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs?page=1&quot;,
             &quot;label&quot;: &quot;1&quot;,
             &quot;active&quot;: true
         },
@@ -377,7 +401,7 @@ access-control-allow-credentials: true
         }
     ],
     &quot;next_page_url&quot;: null,
-    &quot;path&quot;: &quot;http://localhost/api/blogs&quot;,
+    &quot;path&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs&quot;,
     &quot;per_page&quot;: 5,
     &quot;prev_page_url&quot;: null,
     &quot;to&quot;: null,
@@ -456,32 +480,32 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-blogs-update">Update the specified resource in storage.</h2>
+                    <h2 id="endpoints-PUTapi-blogs--id-">Update the specified resource in storage.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-blogs-update">
+<span id="example-requests-PUTapi-blogs--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/blogs/update" \
+    <pre><code class="language-bash">curl --request PUT \
+    "https://onlineschool-production.up.railway.app/api/blogs/aut" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"zyrxgixpxiynchywmxbcwsm\",
-    \"description\": \"sed\"
+    \"title\": \"wshhxrcerwpps\",
+    \"description\": \"omnis\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/blogs/update"
+    "https://onlineschool-production.up.railway.app/api/blogs/aut"
 );
 
 const headers = {
@@ -490,65 +514,65 @@ const headers = {
 };
 
 let body = {
-    "title": "zyrxgixpxiynchywmxbcwsm",
-    "description": "sed"
+    "title": "wshhxrcerwpps",
+    "description": "omnis"
 };
 
 fetch(url, {
-    method: "POST",
+    method: "PUT",
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTapi-blogs-update">
+<span id="example-responses-PUTapi-blogs--id-">
 </span>
-<span id="execution-results-POSTapi-blogs-update" hidden>
+<span id="execution-results-PUTapi-blogs--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-blogs-update"></span>:
+                id="execution-response-status-PUTapi-blogs--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-blogs-update"
+    <pre class="json"><code id="execution-response-content-PUTapi-blogs--id-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-blogs-update" hidden>
+<span id="execution-error-PUTapi-blogs--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-blogs-update">
+    <pre><code id="execution-error-message-PUTapi-blogs--id-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-blogs-update" data-method="POST"
-      data-path="api/blogs/update"
+<form id="form-PUTapi-blogs--id-" data-method="PUT"
+      data-path="api/blogs/{id}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-blogs-update', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-blogs--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-blogs-update"
-                    onclick="tryItOut('POSTapi-blogs-update');">Try it out ⚡
+                    id="btn-tryout-PUTapi-blogs--id-"
+                    onclick="tryItOut('PUTapi-blogs--id-');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-blogs-update"
-                    onclick="cancelTryOut('POSTapi-blogs-update');" hidden>Cancel 🛑
+                    id="btn-canceltryout-PUTapi-blogs--id-"
+                    onclick="cancelTryOut('PUTapi-blogs--id-');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-blogs-update"
+                    id="btn-executetryout-PUTapi-blogs--id-"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
             </button>
             </h3>
             <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/blogs/update</code></b>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/blogs/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -556,7 +580,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-blogs-update"
+                              name="Content-Type"                data-endpoint="PUTapi-blogs--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -567,34 +591,46 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-blogs-update"
+                              name="Accept"                data-endpoint="PUTapi-blogs--id-"
                value="application/json"
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-blogs--id-"
+               value="aut"
+               data-component="url">
+    <br>
+<p>The ID of the blog. Example: <code>aut</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="title"                data-endpoint="POSTapi-blogs-update"
-               value="zyrxgixpxiynchywmxbcwsm"
+                              name="title"                data-endpoint="PUTapi-blogs--id-"
+               value="wshhxrcerwpps"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>zyrxgixpxiynchywmxbcwsm</code></p>
+<p>Must not be greater than 255 characters. Example: <code>wshhxrcerwpps</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="description"                data-endpoint="POSTapi-blogs-update"
-               value="sed"
+                              name="description"                data-endpoint="PUTapi-blogs--id-"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
         </form>
 
@@ -611,14 +647,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/blogs" \
+    "https://onlineschool-production.up.railway.app/api/blogs" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/blogs"
+    "https://onlineschool-production.up.railway.app/api/blogs"
 );
 
 const headers = {
@@ -719,18 +755,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/subscribers" \
+    "https://onlineschool-production.up.railway.app/api/subscribers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"qui\"
+    \"email\": \"temporibus\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/subscribers"
+    "https://onlineschool-production.up.railway.app/api/subscribers"
 );
 
 const headers = {
@@ -739,7 +775,7 @@ const headers = {
 };
 
 let body = {
-    "email": "qui"
+    "email": "temporibus"
 };
 
 fetch(url, {
@@ -828,10 +864,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-subscribers"
-               value="qui"
+               value="temporibus"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>temporibus</code></p>
         </div>
         </form>
 
@@ -848,14 +884,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/subscribers" \
+    --get "https://onlineschool-production.up.railway.app/api/subscribers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/subscribers"
+    "https://onlineschool-production.up.railway.app/api/subscribers"
 );
 
 const headers = {
@@ -887,10 +923,10 @@ access-control-allow-credentials: true
 <code class="language-json" style="max-height: 300px;">{
     &quot;current_page&quot;: 1,
     &quot;data&quot;: [],
-    &quot;first_page_url&quot;: &quot;http://localhost/api/subscribers?page=1&quot;,
+    &quot;first_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers?page=1&quot;,
     &quot;from&quot;: null,
     &quot;last_page&quot;: 1,
-    &quot;last_page_url&quot;: &quot;http://localhost/api/subscribers?page=1&quot;,
+    &quot;last_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers?page=1&quot;,
     &quot;links&quot;: [
         {
             &quot;url&quot;: null,
@@ -898,7 +934,7 @@ access-control-allow-credentials: true
             &quot;active&quot;: false
         },
         {
-            &quot;url&quot;: &quot;http://localhost/api/subscribers?page=1&quot;,
+            &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers?page=1&quot;,
             &quot;label&quot;: &quot;1&quot;,
             &quot;active&quot;: true
         },
@@ -909,7 +945,7 @@ access-control-allow-credentials: true
         }
     ],
     &quot;next_page_url&quot;: null,
-    &quot;path&quot;: &quot;http://localhost/api/subscribers&quot;,
+    &quot;path&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers&quot;,
     &quot;per_page&quot;: 10,
     &quot;prev_page_url&quot;: null,
     &quot;to&quot;: null,
@@ -988,31 +1024,31 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-subscribers-update">Update the specified resource in storage.</h2>
+                    <h2 id="endpoints-PUTapi-subscribers">Update the specified resource in storage.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-subscribers-update">
+<span id="example-requests-PUTapi-subscribers">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/subscribers/update" \
+    <pre><code class="language-bash">curl --request PUT \
+    "https://onlineschool-production.up.railway.app/api/subscribers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"ab\"
+    \"email\": \"ut\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/subscribers/update"
+    "https://onlineschool-production.up.railway.app/api/subscribers"
 );
 
 const headers = {
@@ -1021,64 +1057,64 @@ const headers = {
 };
 
 let body = {
-    "email": "ab"
+    "email": "ut"
 };
 
 fetch(url, {
-    method: "POST",
+    method: "PUT",
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTapi-subscribers-update">
+<span id="example-responses-PUTapi-subscribers">
 </span>
-<span id="execution-results-POSTapi-subscribers-update" hidden>
+<span id="execution-results-PUTapi-subscribers" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-subscribers-update"></span>:
+                id="execution-response-status-PUTapi-subscribers"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-subscribers-update"
+    <pre class="json"><code id="execution-response-content-PUTapi-subscribers"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-subscribers-update" hidden>
+<span id="execution-error-PUTapi-subscribers" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-subscribers-update">
+    <pre><code id="execution-error-message-PUTapi-subscribers">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-subscribers-update" data-method="POST"
-      data-path="api/subscribers/update"
+<form id="form-PUTapi-subscribers" data-method="PUT"
+      data-path="api/subscribers"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-subscribers-update', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-subscribers', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-subscribers-update"
-                    onclick="tryItOut('POSTapi-subscribers-update');">Try it out ⚡
+                    id="btn-tryout-PUTapi-subscribers"
+                    onclick="tryItOut('PUTapi-subscribers');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-subscribers-update"
-                    onclick="cancelTryOut('POSTapi-subscribers-update');" hidden>Cancel 🛑
+                    id="btn-canceltryout-PUTapi-subscribers"
+                    onclick="cancelTryOut('PUTapi-subscribers');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-subscribers-update"
+                    id="btn-executetryout-PUTapi-subscribers"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
             </button>
             </h3>
             <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/subscribers/update</code></b>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/subscribers</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1086,7 +1122,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-subscribers-update"
+                              name="Content-Type"                data-endpoint="PUTapi-subscribers"
                value="application/json"
                data-component="header">
     <br>
@@ -1097,7 +1133,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-subscribers-update"
+                              name="Accept"                data-endpoint="PUTapi-subscribers"
                value="application/json"
                data-component="header">
     <br>
@@ -1109,11 +1145,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="email"                data-endpoint="POSTapi-subscribers-update"
-               value="ab"
+                              name="email"                data-endpoint="PUTapi-subscribers"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>ab</code></p>
+<p>Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -1130,14 +1166,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/subscribers" \
+    "https://onlineschool-production.up.railway.app/api/subscribers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/subscribers"
+    "https://onlineschool-production.up.railway.app/api/subscribers"
 );
 
 const headers = {
@@ -1225,30 +1261,30 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-cources">Show the form for creating a new resource.</h2>
+                    <h2 id="endpoints-POSTapi-courses">Show the form for creating a new resource.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-cources">
+<span id="example-requests-POSTapi-courses">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/cources" \
+    "https://onlineschool-production.up.railway.app/api/courses" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "title=vel"\
-    --form "description=aut"\
-    --form "image=@C:\Users\obedah\AppData\Local\Temp\phpB804.tmp" </code></pre></div>
+    --form "title=consequuntur"\
+    --form "description=natus"\
+    --form "image=@C:\Users\obedah\AppData\Local\Temp\php16B1.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/cources"
+    "https://onlineschool-production.up.railway.app/api/courses"
 );
 
 const headers = {
@@ -1257,8 +1293,8 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('title', 'vel');
-body.append('description', 'aut');
+body.append('title', 'consequuntur');
+body.append('description', 'natus');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -1269,45 +1305,45 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-POSTapi-cources">
+<span id="example-responses-POSTapi-courses">
 </span>
-<span id="execution-results-POSTapi-cources" hidden>
+<span id="execution-results-POSTapi-courses" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-cources"></span>:
+                id="execution-response-status-POSTapi-courses"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-cources"
+    <pre class="json"><code id="execution-response-content-POSTapi-courses"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-cources" hidden>
+<span id="execution-error-POSTapi-courses" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-cources">
+    <pre><code id="execution-error-message-POSTapi-courses">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-cources" data-method="POST"
-      data-path="api/cources"
+<form id="form-POSTapi-courses" data-method="POST"
+      data-path="api/courses"
       data-authed="0"
       data-hasfiles="1"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-cources', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-courses', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-cources"
-                    onclick="tryItOut('POSTapi-cources');">Try it out ⚡
+                    id="btn-tryout-POSTapi-courses"
+                    onclick="tryItOut('POSTapi-courses');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-cources"
-                    onclick="cancelTryOut('POSTapi-cources');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTapi-courses"
+                    onclick="cancelTryOut('POSTapi-courses');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-cources"
+                    id="btn-executetryout-POSTapi-courses"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1315,7 +1351,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/cources</code></b>
+            <b><code>api/courses</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1323,7 +1359,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-cources"
+                              name="Content-Type"                data-endpoint="POSTapi-courses"
                value="multipart/form-data"
                data-component="header">
     <br>
@@ -1334,7 +1370,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-cources"
+                              name="Accept"                data-endpoint="POSTapi-courses"
                value="application/json"
                data-component="header">
     <br>
@@ -1346,57 +1382,57 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="title"                data-endpoint="POSTapi-cources"
-               value="vel"
+                              name="title"                data-endpoint="POSTapi-courses"
+               value="consequuntur"
                data-component="body">
     <br>
-<p>Example: <code>vel</code></p>
+<p>Example: <code>consequuntur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="description"                data-endpoint="POSTapi-cources"
-               value="aut"
+                              name="description"                data-endpoint="POSTapi-courses"
+               value="natus"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>natus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
 <small>file</small>&nbsp;
  &nbsp;
                 <input type="file" style="display: none"
-                              name="image"                data-endpoint="POSTapi-cources"
+                              name="image"                data-endpoint="POSTapi-courses"
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\obedah\AppData\Local\Temp\phpB804.tmp</code></p>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\obedah\AppData\Local\Temp\php16B1.tmp</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-cources">Display a listing of the resource.</h2>
+                    <h2 id="endpoints-GETapi-courses">Display a listing of the resource.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-cources">
+<span id="example-requests-GETapi-courses">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/cources" \
+    --get "https://onlineschool-production.up.railway.app/api/courses" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/cources"
+    "https://onlineschool-production.up.railway.app/api/courses"
 );
 
 const headers = {
@@ -1411,7 +1447,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-cources">
+<span id="example-responses-GETapi-courses">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -1431,10 +1467,10 @@ access-control-allow-credentials: true
         &quot;data&quot;: {
             &quot;current_page&quot;: 1,
             &quot;data&quot;: [],
-            &quot;first_page_url&quot;: &quot;http://localhost/api/cources?page=1&quot;,
+            &quot;first_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/courses?page=1&quot;,
             &quot;from&quot;: null,
             &quot;last_page&quot;: 1,
-            &quot;last_page_url&quot;: &quot;http://localhost/api/cources?page=1&quot;,
+            &quot;last_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/courses?page=1&quot;,
             &quot;links&quot;: [
                 {
                     &quot;url&quot;: null,
@@ -1442,7 +1478,7 @@ access-control-allow-credentials: true
                     &quot;active&quot;: false
                 },
                 {
-                    &quot;url&quot;: &quot;http://localhost/api/cources?page=1&quot;,
+                    &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/courses?page=1&quot;,
                     &quot;label&quot;: &quot;1&quot;,
                     &quot;active&quot;: true
                 },
@@ -1453,7 +1489,7 @@ access-control-allow-credentials: true
                 }
             ],
             &quot;next_page_url&quot;: null,
-            &quot;path&quot;: &quot;http://localhost/api/cources&quot;,
+            &quot;path&quot;: &quot;https://onlineschool-production.up.railway.app/api/courses&quot;,
             &quot;per_page&quot;: 5,
             &quot;prev_page_url&quot;: null,
             &quot;to&quot;: null,
@@ -1463,43 +1499,43 @@ access-control-allow-credentials: true
 ]</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-cources" hidden>
+<span id="execution-results-GETapi-courses" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-cources"></span>:
+                id="execution-response-status-GETapi-courses"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-cources"
+    <pre class="json"><code id="execution-response-content-GETapi-courses"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-cources" hidden>
+<span id="execution-error-GETapi-courses" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-cources">
+    <pre><code id="execution-error-message-GETapi-courses">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-cources" data-method="GET"
-      data-path="api/cources"
+<form id="form-GETapi-courses" data-method="GET"
+      data-path="api/courses"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-cources', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-courses', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-cources"
-                    onclick="tryItOut('GETapi-cources');">Try it out ⚡
+                    id="btn-tryout-GETapi-courses"
+                    onclick="tryItOut('GETapi-courses');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-cources"
-                    onclick="cancelTryOut('GETapi-cources');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-courses"
+                    onclick="cancelTryOut('GETapi-courses');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-cources"
+                    id="btn-executetryout-GETapi-courses"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1507,7 +1543,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/cources</code></b>
+            <b><code>api/courses</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1515,7 +1551,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-cources"
+                              name="Content-Type"                data-endpoint="GETapi-courses"
                value="application/json"
                data-component="header">
     <br>
@@ -1526,7 +1562,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-cources"
+                              name="Accept"                data-endpoint="GETapi-courses"
                value="application/json"
                data-component="header">
     <br>
@@ -1534,32 +1570,32 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-cources-update">Update the specified resource in storage.</h2>
+                    <h2 id="endpoints-PUTapi-courses">Update the specified resource in storage.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-cources-update">
+<span id="example-requests-PUTapi-courses">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/cources/update" \
+    <pre><code class="language-bash">curl --request PUT \
+    "https://onlineschool-production.up.railway.app/api/courses" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"slnqctpkj\",
-    \"description\": \"magni\"
+    \"title\": \"aitufe\",
+    \"description\": \"qui\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/cources/update"
+    "https://onlineschool-production.up.railway.app/api/courses"
 );
 
 const headers = {
@@ -1568,65 +1604,65 @@ const headers = {
 };
 
 let body = {
-    "title": "slnqctpkj",
-    "description": "magni"
+    "title": "aitufe",
+    "description": "qui"
 };
 
 fetch(url, {
-    method: "POST",
+    method: "PUT",
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTapi-cources-update">
+<span id="example-responses-PUTapi-courses">
 </span>
-<span id="execution-results-POSTapi-cources-update" hidden>
+<span id="execution-results-PUTapi-courses" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-cources-update"></span>:
+                id="execution-response-status-PUTapi-courses"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-cources-update"
+    <pre class="json"><code id="execution-response-content-PUTapi-courses"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-cources-update" hidden>
+<span id="execution-error-PUTapi-courses" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-cources-update">
+    <pre><code id="execution-error-message-PUTapi-courses">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-cources-update" data-method="POST"
-      data-path="api/cources/update"
+<form id="form-PUTapi-courses" data-method="PUT"
+      data-path="api/courses"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-cources-update', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-courses', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-cources-update"
-                    onclick="tryItOut('POSTapi-cources-update');">Try it out ⚡
+                    id="btn-tryout-PUTapi-courses"
+                    onclick="tryItOut('PUTapi-courses');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-cources-update"
-                    onclick="cancelTryOut('POSTapi-cources-update');" hidden>Cancel 🛑
+                    id="btn-canceltryout-PUTapi-courses"
+                    onclick="cancelTryOut('PUTapi-courses');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-cources-update"
+                    id="btn-executetryout-PUTapi-courses"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
             </button>
             </h3>
             <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/cources/update</code></b>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/courses</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1634,7 +1670,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-cources-update"
+                              name="Content-Type"                data-endpoint="PUTapi-courses"
                value="application/json"
                data-component="header">
     <br>
@@ -1645,7 +1681,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-cources-update"
+                              name="Accept"                data-endpoint="PUTapi-courses"
                value="application/json"
                data-component="header">
     <br>
@@ -1657,46 +1693,46 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="title"                data-endpoint="POSTapi-cources-update"
-               value="slnqctpkj"
+                              name="title"                data-endpoint="PUTapi-courses"
+               value="aitufe"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>slnqctpkj</code></p>
+<p>Must not be greater than 255 characters. Example: <code>aitufe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="description"                data-endpoint="POSTapi-cources-update"
-               value="magni"
+                              name="description"                data-endpoint="PUTapi-courses"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>magni</code></p>
+<p>Example: <code>qui</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-cources">Remove the specified resource from storage.</h2>
+                    <h2 id="endpoints-DELETEapi-courses">Remove the specified resource from storage.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-DELETEapi-cources">
+<span id="example-requests-DELETEapi-courses">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/cources" \
+    "https://onlineschool-production.up.railway.app/api/courses" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/cources"
+    "https://onlineschool-production.up.railway.app/api/courses"
 );
 
 const headers = {
@@ -1711,45 +1747,45 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-DELETEapi-cources">
+<span id="example-responses-DELETEapi-courses">
 </span>
-<span id="execution-results-DELETEapi-cources" hidden>
+<span id="execution-results-DELETEapi-courses" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-cources"></span>:
+                id="execution-response-status-DELETEapi-courses"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-cources"
+    <pre class="json"><code id="execution-response-content-DELETEapi-courses"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-DELETEapi-cources" hidden>
+<span id="execution-error-DELETEapi-courses" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-cources">
+    <pre><code id="execution-error-message-DELETEapi-courses">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-DELETEapi-cources" data-method="DELETE"
-      data-path="api/cources"
+<form id="form-DELETEapi-courses" data-method="DELETE"
+      data-path="api/courses"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-cources', this);">
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-courses', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-cources"
-                    onclick="tryItOut('DELETEapi-cources');">Try it out ⚡
+                    id="btn-tryout-DELETEapi-courses"
+                    onclick="tryItOut('DELETEapi-courses');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-cources"
-                    onclick="cancelTryOut('DELETEapi-cources');" hidden>Cancel 🛑
+                    id="btn-canceltryout-DELETEapi-courses"
+                    onclick="cancelTryOut('DELETEapi-courses');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-cources"
+                    id="btn-executetryout-DELETEapi-courses"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1757,7 +1793,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-red">DELETE</small>
-            <b><code>api/cources</code></b>
+            <b><code>api/courses</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1765,7 +1801,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-cources"
+                              name="Content-Type"                data-endpoint="DELETEapi-courses"
                value="application/json"
                data-component="header">
     <br>
@@ -1776,7 +1812,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-cources"
+                              name="Accept"                data-endpoint="DELETEapi-courses"
                value="application/json"
                data-component="header">
     <br>
@@ -1784,27 +1820,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-cources_time">Show the form for creating a new resource.</h2>
+                    <h2 id="endpoints-POSTapi-courses_time">Show the form for creating a new resource.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-cources_time">
+<span id="example-requests-POSTapi-courses_time">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/cources_time" \
+    "https://onlineschool-production.up.railway.app/api/courses_time" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/cources_time"
+    "https://onlineschool-production.up.railway.app/api/courses_time"
 );
 
 const headers = {
@@ -1819,45 +1855,45 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-POSTapi-cources_time">
+<span id="example-responses-POSTapi-courses_time">
 </span>
-<span id="execution-results-POSTapi-cources_time" hidden>
+<span id="execution-results-POSTapi-courses_time" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-cources_time"></span>:
+                id="execution-response-status-POSTapi-courses_time"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-cources_time"
+    <pre class="json"><code id="execution-response-content-POSTapi-courses_time"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-cources_time" hidden>
+<span id="execution-error-POSTapi-courses_time" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-cources_time">
+    <pre><code id="execution-error-message-POSTapi-courses_time">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-cources_time" data-method="POST"
-      data-path="api/cources_time"
+<form id="form-POSTapi-courses_time" data-method="POST"
+      data-path="api/courses_time"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-cources_time', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-courses_time', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-cources_time"
-                    onclick="tryItOut('POSTapi-cources_time');">Try it out ⚡
+                    id="btn-tryout-POSTapi-courses_time"
+                    onclick="tryItOut('POSTapi-courses_time');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-cources_time"
-                    onclick="cancelTryOut('POSTapi-cources_time');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTapi-courses_time"
+                    onclick="cancelTryOut('POSTapi-courses_time');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-cources_time"
+                    id="btn-executetryout-POSTapi-courses_time"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1865,7 +1901,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/cources_time</code></b>
+            <b><code>api/courses_time</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1873,7 +1909,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-cources_time"
+                              name="Content-Type"                data-endpoint="POSTapi-courses_time"
                value="application/json"
                data-component="header">
     <br>
@@ -1884,7 +1920,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-cources_time"
+                              name="Accept"                data-endpoint="POSTapi-courses_time"
                value="application/json"
                data-component="header">
     <br>
@@ -1892,27 +1928,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-cources_time">Display a listing of the resource.</h2>
+                    <h2 id="endpoints-GETapi-courses_time">Display a listing of the resource.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-cources_time">
+<span id="example-requests-GETapi-courses_time">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/cources_time" \
+    --get "https://onlineschool-production.up.railway.app/api/courses_time" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/cources_time"
+    "https://onlineschool-production.up.railway.app/api/courses_time"
 );
 
 const headers = {
@@ -1927,7 +1963,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-cources_time">
+<span id="example-responses-GETapi-courses_time">
             <blockquote>
             <p>Example response (500):</p>
         </blockquote>
@@ -1946,43 +1982,43 @@ access-control-allow-credentials: true
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-cources_time" hidden>
+<span id="execution-results-GETapi-courses_time" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-cources_time"></span>:
+                id="execution-response-status-GETapi-courses_time"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-cources_time"
+    <pre class="json"><code id="execution-response-content-GETapi-courses_time"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-cources_time" hidden>
+<span id="execution-error-GETapi-courses_time" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-cources_time">
+    <pre><code id="execution-error-message-GETapi-courses_time">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-cources_time" data-method="GET"
-      data-path="api/cources_time"
+<form id="form-GETapi-courses_time" data-method="GET"
+      data-path="api/courses_time"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-cources_time', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-courses_time', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-cources_time"
-                    onclick="tryItOut('GETapi-cources_time');">Try it out ⚡
+                    id="btn-tryout-GETapi-courses_time"
+                    onclick="tryItOut('GETapi-courses_time');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-cources_time"
-                    onclick="cancelTryOut('GETapi-cources_time');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-courses_time"
+                    onclick="cancelTryOut('GETapi-courses_time');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-cources_time"
+                    id="btn-executetryout-GETapi-courses_time"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1990,7 +2026,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/cources_time</code></b>
+            <b><code>api/courses_time</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1998,7 +2034,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-cources_time"
+                              name="Content-Type"                data-endpoint="GETapi-courses_time"
                value="application/json"
                data-component="header">
     <br>
@@ -2009,7 +2045,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-cources_time"
+                              name="Accept"                data-endpoint="GETapi-courses_time"
                value="application/json"
                data-component="header">
     <br>
@@ -2017,27 +2053,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-cources_time-update">Update the specified resource in storage.</h2>
+                    <h2 id="endpoints-PUTapi-courses_time">Update the specified resource in storage.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-cources_time-update">
+<span id="example-requests-PUTapi-courses_time">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/cources_time/update" \
+    <pre><code class="language-bash">curl --request PUT \
+    "https://onlineschool-production.up.railway.app/api/courses_time" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/cources_time/update"
+    "https://onlineschool-production.up.railway.app/api/courses_time"
 );
 
 const headers = {
@@ -2046,59 +2082,59 @@ const headers = {
 };
 
 fetch(url, {
-    method: "POST",
+    method: "PUT",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTapi-cources_time-update">
+<span id="example-responses-PUTapi-courses_time">
 </span>
-<span id="execution-results-POSTapi-cources_time-update" hidden>
+<span id="execution-results-PUTapi-courses_time" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-cources_time-update"></span>:
+                id="execution-response-status-PUTapi-courses_time"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-cources_time-update"
+    <pre class="json"><code id="execution-response-content-PUTapi-courses_time"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-cources_time-update" hidden>
+<span id="execution-error-PUTapi-courses_time" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-cources_time-update">
+    <pre><code id="execution-error-message-PUTapi-courses_time">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-cources_time-update" data-method="POST"
-      data-path="api/cources_time/update"
+<form id="form-PUTapi-courses_time" data-method="PUT"
+      data-path="api/courses_time"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-cources_time-update', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-courses_time', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-cources_time-update"
-                    onclick="tryItOut('POSTapi-cources_time-update');">Try it out ⚡
+                    id="btn-tryout-PUTapi-courses_time"
+                    onclick="tryItOut('PUTapi-courses_time');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-cources_time-update"
-                    onclick="cancelTryOut('POSTapi-cources_time-update');" hidden>Cancel 🛑
+                    id="btn-canceltryout-PUTapi-courses_time"
+                    onclick="cancelTryOut('PUTapi-courses_time');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-cources_time-update"
+                    id="btn-executetryout-PUTapi-courses_time"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
             </button>
             </h3>
             <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/cources_time/update</code></b>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/courses_time</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -2106,7 +2142,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-cources_time-update"
+                              name="Content-Type"                data-endpoint="PUTapi-courses_time"
                value="application/json"
                data-component="header">
     <br>
@@ -2117,7 +2153,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-cources_time-update"
+                              name="Accept"                data-endpoint="PUTapi-courses_time"
                value="application/json"
                data-component="header">
     <br>
@@ -2125,27 +2161,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-DELETEapi-cources_time">Remove the specified resource from storage.</h2>
+                    <h2 id="endpoints-DELETEapi-courses_time">Remove the specified resource from storage.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-DELETEapi-cources_time">
+<span id="example-requests-DELETEapi-courses_time">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/cources_time" \
+    "https://onlineschool-production.up.railway.app/api/courses_time" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/cources_time"
+    "https://onlineschool-production.up.railway.app/api/courses_time"
 );
 
 const headers = {
@@ -2160,45 +2196,45 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-DELETEapi-cources_time">
+<span id="example-responses-DELETEapi-courses_time">
 </span>
-<span id="execution-results-DELETEapi-cources_time" hidden>
+<span id="execution-results-DELETEapi-courses_time" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-cources_time"></span>:
+                id="execution-response-status-DELETEapi-courses_time"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-cources_time"
+    <pre class="json"><code id="execution-response-content-DELETEapi-courses_time"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-DELETEapi-cources_time" hidden>
+<span id="execution-error-DELETEapi-courses_time" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-cources_time">
+    <pre><code id="execution-error-message-DELETEapi-courses_time">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-DELETEapi-cources_time" data-method="DELETE"
-      data-path="api/cources_time"
+<form id="form-DELETEapi-courses_time" data-method="DELETE"
+      data-path="api/courses_time"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-cources_time', this);">
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-courses_time', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-cources_time"
-                    onclick="tryItOut('DELETEapi-cources_time');">Try it out ⚡
+                    id="btn-tryout-DELETEapi-courses_time"
+                    onclick="tryItOut('DELETEapi-courses_time');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-cources_time"
-                    onclick="cancelTryOut('DELETEapi-cources_time');" hidden>Cancel 🛑
+                    id="btn-canceltryout-DELETEapi-courses_time"
+                    onclick="cancelTryOut('DELETEapi-courses_time');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-cources_time"
+                    id="btn-executetryout-DELETEapi-courses_time"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -2206,7 +2242,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-red">DELETE</small>
-            <b><code>api/cources_time</code></b>
+            <b><code>api/courses_time</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -2214,7 +2250,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-cources_time"
+                              name="Content-Type"                data-endpoint="DELETEapi-courses_time"
                value="application/json"
                data-component="header">
     <br>
@@ -2225,13 +2261,1271 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-cources_time"
+                              name="Accept"                data-endpoint="DELETEapi-courses_time"
                value="application/json"
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
+
+                    <h2 id="endpoints-POSTapi-guest_users">Show the form for creating a new resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-guest_users">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://onlineschool-production.up.railway.app/api/guest_users" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"courseId\": \"rerum\",
+    \"firstName\": \"beatae\",
+    \"lastName\": \"nam\",
+    \"age\": \"ea\",
+    \"email\": \"moore.kristina@example.org\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/guest_users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "courseId": "rerum",
+    "firstName": "beatae",
+    "lastName": "nam",
+    "age": "ea",
+    "email": "moore.kristina@example.org"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-guest_users">
+</span>
+<span id="execution-results-POSTapi-guest_users" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-guest_users"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-guest_users"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-guest_users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-guest_users">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-guest_users" data-method="POST"
+      data-path="api/guest_users"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-guest_users', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-guest_users"
+                    onclick="tryItOut('POSTapi-guest_users');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-guest_users"
+                    onclick="cancelTryOut('POSTapi-guest_users');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-guest_users"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/guest_users</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>courseId</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="courseId"                data-endpoint="POSTapi-guest_users"
+               value="rerum"
+               data-component="body">
+    <br>
+<p>Example: <code>rerum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>firstName</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="firstName"                data-endpoint="POSTapi-guest_users"
+               value="beatae"
+               data-component="body">
+    <br>
+<p>Example: <code>beatae</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>lastName</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="lastName"                data-endpoint="POSTapi-guest_users"
+               value="nam"
+               data-component="body">
+    <br>
+<p>Example: <code>nam</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>age</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="age"                data-endpoint="POSTapi-guest_users"
+               value="ea"
+               data-component="body">
+    <br>
+<p>Example: <code>ea</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-guest_users"
+               value="moore.kristina@example.org"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>moore.kristina@example.org</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-guest_users">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-guest_users">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://onlineschool-production.up.railway.app/api/guest_users" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/guest_users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-guest_users">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: http://localhost:3000
+access-control-allow-credentials: true
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Server Error&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-guest_users" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-guest_users"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-guest_users"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-guest_users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-guest_users">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-guest_users" data-method="GET"
+      data-path="api/guest_users"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-guest_users', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-guest_users"
+                    onclick="tryItOut('GETapi-guest_users');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-guest_users"
+                    onclick="cancelTryOut('GETapi-guest_users');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-guest_users"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/guest_users</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-PUTapi-guest_users">Update the specified resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-guest_users">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://onlineschool-production.up.railway.app/api/guest_users" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"courseId\": \"necessitatibus\",
+    \"firstName\": \"voluptatem\",
+    \"lastName\": \"perspiciatis\",
+    \"age\": \"molestiae\",
+    \"email\": \"assunta17@example.com\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/guest_users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "courseId": "necessitatibus",
+    "firstName": "voluptatem",
+    "lastName": "perspiciatis",
+    "age": "molestiae",
+    "email": "assunta17@example.com"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-guest_users">
+</span>
+<span id="execution-results-PUTapi-guest_users" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-guest_users"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-guest_users"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-guest_users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-guest_users">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-guest_users" data-method="PUT"
+      data-path="api/guest_users"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-guest_users', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-guest_users"
+                    onclick="tryItOut('PUTapi-guest_users');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-guest_users"
+                    onclick="cancelTryOut('PUTapi-guest_users');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-guest_users"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/guest_users</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>courseId</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="courseId"                data-endpoint="PUTapi-guest_users"
+               value="necessitatibus"
+               data-component="body">
+    <br>
+<p>Example: <code>necessitatibus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>firstName</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="firstName"                data-endpoint="PUTapi-guest_users"
+               value="voluptatem"
+               data-component="body">
+    <br>
+<p>Example: <code>voluptatem</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>lastName</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="lastName"                data-endpoint="PUTapi-guest_users"
+               value="perspiciatis"
+               data-component="body">
+    <br>
+<p>Example: <code>perspiciatis</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>age</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="age"                data-endpoint="PUTapi-guest_users"
+               value="molestiae"
+               data-component="body">
+    <br>
+<p>Example: <code>molestiae</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="PUTapi-guest_users"
+               value="assunta17@example.com"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>assunta17@example.com</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-DELETEapi-guest_users">Remove the specified resource from storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-guest_users">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://onlineschool-production.up.railway.app/api/guest_users" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": \"numquam\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/guest_users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": "numquam"
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-guest_users">
+</span>
+<span id="execution-results-DELETEapi-guest_users" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-guest_users"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-guest_users"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-guest_users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-guest_users">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-guest_users" data-method="DELETE"
+      data-path="api/guest_users"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-guest_users', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-guest_users"
+                    onclick="tryItOut('DELETEapi-guest_users');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-guest_users"
+                    onclick="cancelTryOut('DELETEapi-guest_users');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-guest_users"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/guest_users</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-guest_users"
+               value="numquam"
+               data-component="body">
+    <br>
+<p>Example: <code>numquam</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-free_lessons">Show the form for creating a new resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-free_lessons">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://onlineschool-production.up.railway.app/api/free_lessons" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"userId\": 7,
+    \"courseId\": 5,
+    \"numberOfMonth\": 20,
+    \"dayOfMonth\": 12,
+    \"startTime\": \"01:19:04\",
+    \"endTime\": \"01:19:04\",
+    \"meetUrl\": \"https:\\/\\/www.smitham.com\\/dolorum-cupiditate-magnam-officia-ab-quibusdam-quod\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/free_lessons"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "userId": 7,
+    "courseId": 5,
+    "numberOfMonth": 20,
+    "dayOfMonth": 12,
+    "startTime": "01:19:04",
+    "endTime": "01:19:04",
+    "meetUrl": "https:\/\/www.smitham.com\/dolorum-cupiditate-magnam-officia-ab-quibusdam-quod"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-free_lessons">
+</span>
+<span id="execution-results-POSTapi-free_lessons" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-free_lessons"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-free_lessons"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-free_lessons" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-free_lessons">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-free_lessons" data-method="POST"
+      data-path="api/free_lessons"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-free_lessons', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-free_lessons"
+                    onclick="tryItOut('POSTapi-free_lessons');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-free_lessons"
+                    onclick="cancelTryOut('POSTapi-free_lessons');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-free_lessons"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/free_lessons</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>userId</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="userId"                data-endpoint="POSTapi-free_lessons"
+               value="7"
+               data-component="body">
+    <br>
+<p>Example: <code>7</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>courseId</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="courseId"                data-endpoint="POSTapi-free_lessons"
+               value="5"
+               data-component="body">
+    <br>
+<p>Example: <code>5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>numberOfMonth</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="numberOfMonth"                data-endpoint="POSTapi-free_lessons"
+               value="20"
+               data-component="body">
+    <br>
+<p>Example: <code>20</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>dayOfMonth</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="dayOfMonth"                data-endpoint="POSTapi-free_lessons"
+               value="12"
+               data-component="body">
+    <br>
+<p>Example: <code>12</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>startTime</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="startTime"                data-endpoint="POSTapi-free_lessons"
+               value="01:19:04"
+               data-component="body">
+    <br>
+<p>Must be a valid date in the format <code>H:i:s</code>. Example: <code>01:19:04</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>endTime</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="endTime"                data-endpoint="POSTapi-free_lessons"
+               value="01:19:04"
+               data-component="body">
+    <br>
+<p>Must be a valid date in the format <code>H:i:s</code>. Example: <code>01:19:04</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>meetUrl</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="meetUrl"                data-endpoint="POSTapi-free_lessons"
+               value="https://www.smitham.com/dolorum-cupiditate-magnam-officia-ab-quibusdam-quod"
+               data-component="body">
+    <br>
+<p>Must be a valid URL. Example: <code>https://www.smitham.com/dolorum-cupiditate-magnam-officia-ab-quibusdam-quod</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-free_lessons">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-free_lessons">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://onlineschool-production.up.railway.app/api/free_lessons" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/free_lessons"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-free_lessons">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: http://localhost:3000
+access-control-allow-credentials: true
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Server Error&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-free_lessons" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-free_lessons"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-free_lessons"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-free_lessons" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-free_lessons">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-free_lessons" data-method="GET"
+      data-path="api/free_lessons"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-free_lessons', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-free_lessons"
+                    onclick="tryItOut('GETapi-free_lessons');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-free_lessons"
+                    onclick="cancelTryOut('GETapi-free_lessons');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-free_lessons"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/free_lessons</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-PUTapi-free_lessons">Update the specified resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-free_lessons">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://onlineschool-production.up.railway.app/api/free_lessons" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"numberOfMonth\": \"eaque\",
+    \"dayOfMonth\": \"non\",
+    \"startTime\": \"laudantium\",
+    \"endTime\": \"giovani22@example.org\",
+    \"meetUrl\": \"et\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/free_lessons"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "numberOfMonth": "eaque",
+    "dayOfMonth": "non",
+    "startTime": "laudantium",
+    "endTime": "giovani22@example.org",
+    "meetUrl": "et"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-free_lessons">
+</span>
+<span id="execution-results-PUTapi-free_lessons" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-free_lessons"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-free_lessons"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-free_lessons" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-free_lessons">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-free_lessons" data-method="PUT"
+      data-path="api/free_lessons"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-free_lessons', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-free_lessons"
+                    onclick="tryItOut('PUTapi-free_lessons');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-free_lessons"
+                    onclick="cancelTryOut('PUTapi-free_lessons');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-free_lessons"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/free_lessons</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>numberOfMonth</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="numberOfMonth"                data-endpoint="PUTapi-free_lessons"
+               value="eaque"
+               data-component="body">
+    <br>
+<p>Example: <code>eaque</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>dayOfMonth</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="dayOfMonth"                data-endpoint="PUTapi-free_lessons"
+               value="non"
+               data-component="body">
+    <br>
+<p>Example: <code>non</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>startTime</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="startTime"                data-endpoint="PUTapi-free_lessons"
+               value="laudantium"
+               data-component="body">
+    <br>
+<p>Example: <code>laudantium</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>endTime</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="endTime"                data-endpoint="PUTapi-free_lessons"
+               value="giovani22@example.org"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>giovani22@example.org</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>meetUrl</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="meetUrl"                data-endpoint="PUTapi-free_lessons"
+               value="et"
+               data-component="body">
+    <br>
+<p>Example: <code>et</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-DELETEapi-free_lessons">Remove the specified resource from storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-free_lessons">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://onlineschool-production.up.railway.app/api/free_lessons" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": \"dignissimos\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/free_lessons"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": "dignissimos"
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-free_lessons">
+</span>
+<span id="execution-results-DELETEapi-free_lessons" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-free_lessons"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-free_lessons"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-free_lessons" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-free_lessons">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-free_lessons" data-method="DELETE"
+      data-path="api/free_lessons"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-free_lessons', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-free_lessons"
+                    onclick="tryItOut('DELETEapi-free_lessons');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-free_lessons"
+                    onclick="cancelTryOut('DELETEapi-free_lessons');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-free_lessons"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/free_lessons</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-free_lessons"
+               value="dignissimos"
+               data-component="body">
+    <br>
+<p>Example: <code>dignissimos</code></p>
+        </div>
+        </form>
 
             
 

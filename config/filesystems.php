@@ -32,7 +32,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => '/app/storage',
             'throw' => false,
         ],
 
@@ -43,11 +43,11 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
-
+        /*
         'blogs' => [
             'driver' => 'local',
-            'root' => storage_path('public/images/blogs/'),
-            'url' => env('APP_URL').'/storage',
+            'root' => storage_path('app/public/blogs'),
+            'url' => env('APP_URL').'/storage/blogs',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -57,7 +57,7 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
-        ],
+        ],*/
 
 
         's3' => [

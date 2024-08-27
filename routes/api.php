@@ -7,27 +7,57 @@ use App\Http\Controllers\test;
 use App\Http\Controllers\SubscribersController;
 use App\Http\Controllers\CourcesController;
 use App\Http\Controllers\CourcesTimeController;
+use App\Http\Controllers\GuestUsersController;
+use App\Http\Controllers\FreeLessonsController;
+use Spatie\GoogleCalendar\Event;
+
+
 
 Route::get('/',function(){return "welcome to our api";});
-Route::post('blogs',[BlogsController::class,'create']);
-Route::get('blogs',[BlogsController::class,'index']);
-Route::post('blogs/update',[BlogsController::class,'update']);
-Route::delete('blogs',[BlogsController::class,'destroy']);
+
+Route::group(['prefix' => 'blogs'], function () {
+    Route::post('/', [BlogsController::class, 'create']);
+    Route::get('/', [BlogsController::class, 'index']);
+    Route::put('/{id}', [BlogsController::class, 'update']);
+    Route::delete('/', [BlogsController::class, 'destroy']);
+});
 
 
- Route::post('subscribers',[SubscribersController::class,'create']);
-Route::get('subscribers',[SubscribersController::class,'index']);
-Route::post('subscribers/update',[SubscribersController::class,'update']);
-Route::delete('subscribers',[SubscribersController::class,'destroy']);
+Route::group(['prefix' => 'subscribers'], function () {
+    Route::post('/', [SubscribersController::class, 'create']);
+    Route::get('/', [SubscribersController::class, 'index']);
+    Route::put('/{id}', [SubscribersController::class, 'update']);
+    Route::delete('/', [SubscribersController::class, 'destroy']);
+});
 
 
 
-Route::post('cources',[CourcesController::class,'create']);
-Route::get('cources',[CourcesController::class,'index']);
-Route::post('cources/update',[CourcesController::class,'update']);
-Route::delete('cources',[CourcesController::class,'destroy']);
+Route::group(['prefix' => 'courses'], function () {
+    Route::post('/', [CourcesController::class, 'create']);
+    Route::get('/', [CourcesController::class, 'index']);
+    Route::put('/{id}', [CourcesController::class, 'update']);
+    Route::delete('/', [CourcesController::class, 'destroy']);
+});
 
-Route::post('cources_time',[CourcesTimeController::class,'create']);
-Route::get('cources_time',[CourcesTimeController::class,'index']);
-Route::post('cources_time/update',[CourcesTimeController::class,'update']);
-Route::delete('cources_time',[CourcesTimeController::class,'destroy']);
+Route::group(['prefix' => 'courses_time'], function () {
+    Route::post('/', [CourcesTimeController::class, 'create']);
+    Route::get('/', [CourcesTimeController::class, 'index']);
+    Route::put('/{id}', [CourcesTimeController::class, 'update']);
+    Route::delete('/', [CourcesTimeController::class, 'destroy']);
+});
+
+Route::group(['prefix' => 'guest_users'], function () {
+    Route::post('/', [GuestUsersController::class, 'create']);
+    Route::get('/', [GuestUsersController::class, 'index']);
+    Route::put('/{id}', [GuestUsersController::class, 'update']);
+    Route::delete('/', [GuestUsersController::class, 'destroy']);
+});
+
+Route::group(['prefix' => 'free_lessons'], function () {
+    Route::post('/', [FreeLessonsController::class, 'create']);
+    Route::get('/', [FreeLessonsController::class, 'index']);
+    Route::put('/{id}', [FreeLessonsController::class, 'update']);
+    Route::delete('/', [FreeLessonsController::class, 'destroy']);
+});
+    Route::get('create_event',[FreeLessonsController::class,'createEvent']);
+       

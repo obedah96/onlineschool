@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost'
+    url: 'https://onlineschool-production.up.railway.app'
 paths:
   /api/blogs:
     post:
@@ -26,11 +26,11 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: veniam
+                  example: sed
                 description:
                   type: string
                   description: ''
-                  example: cum
+                  example: ipsa
                 image:
                   type: string
                   format: binary
@@ -55,17 +55,17 @@ paths:
                 example:
                   current_page: 1
                   data: []
-                  first_page_url: 'http://localhost/api/blogs?page=1'
+                  first_page_url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
                   from: null
                   last_page: 1
-                  last_page_url: 'http://localhost/api/blogs?page=1'
+                  last_page_url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
                   links:
                     -
                       url: null
                       label: '&laquo; Previous'
                       active: false
                     -
-                      url: 'http://localhost/api/blogs?page=1'
+                      url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
                       label: '1'
                       active: true
                     -
@@ -73,7 +73,7 @@ paths:
                       label: 'Next &raquo;'
                       active: false
                   next_page_url: null
-                  path: 'http://localhost/api/blogs'
+                  path: 'https://onlineschool-production.up.railway.app/api/blogs'
                   per_page: 5
                   prev_page_url: null
                   to: null
@@ -87,7 +87,7 @@ paths:
                     example: []
                   first_page_url:
                     type: string
-                    example: 'http://localhost/api/blogs?page=1'
+                    example: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
                   from:
                     type: string
                     example: null
@@ -96,7 +96,7 @@ paths:
                     example: 1
                   last_page_url:
                     type: string
-                    example: 'http://localhost/api/blogs?page=1'
+                    example: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
                   links:
                     type: array
                     example:
@@ -105,7 +105,7 @@ paths:
                         label: '&laquo; Previous'
                         active: false
                       -
-                        url: 'http://localhost/api/blogs?page=1'
+                        url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
                         label: '1'
                         active: true
                       -
@@ -129,7 +129,7 @@ paths:
                     example: null
                   path:
                     type: string
-                    example: 'http://localhost/api/blogs'
+                    example: 'https://onlineschool-production.up.railway.app/api/blogs'
                   per_page:
                     type: integer
                     example: 5
@@ -154,8 +154,8 @@ paths:
       tags:
         - Endpoints
       security: []
-  /api/blogs/update:
-    post:
+  '/api/blogs/{id}':
+    put:
       summary: 'Update the specified resource in storage.'
       operationId: updateTheSpecifiedResourceInStorage
       description: ''
@@ -173,15 +173,24 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: zyrxgixpxiynchywmxbcwsm
+                  example: wshhxrcerwpps
                 description:
                   type: string
                   description: ''
-                  example: sed
+                  example: omnis
               required:
                 - title
                 - description
       security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the blog.'
+        example: aut
+        required: true
+        schema:
+          type: string
   /api/subscribers:
     post:
       summary: 'Show the form for creating a new resource.'
@@ -201,7 +210,7 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: qui
+                  example: temporibus
               required:
                 - email
       security: []
@@ -220,17 +229,17 @@ paths:
                 example:
                   current_page: 1
                   data: []
-                  first_page_url: 'http://localhost/api/subscribers?page=1'
+                  first_page_url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
                   from: null
                   last_page: 1
-                  last_page_url: 'http://localhost/api/subscribers?page=1'
+                  last_page_url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
                   links:
                     -
                       url: null
                       label: '&laquo; Previous'
                       active: false
                     -
-                      url: 'http://localhost/api/subscribers?page=1'
+                      url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
                       label: '1'
                       active: true
                     -
@@ -238,7 +247,7 @@ paths:
                       label: 'Next &raquo;'
                       active: false
                   next_page_url: null
-                  path: 'http://localhost/api/subscribers'
+                  path: 'https://onlineschool-production.up.railway.app/api/subscribers'
                   per_page: 10
                   prev_page_url: null
                   to: null
@@ -252,7 +261,7 @@ paths:
                     example: []
                   first_page_url:
                     type: string
-                    example: 'http://localhost/api/subscribers?page=1'
+                    example: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
                   from:
                     type: string
                     example: null
@@ -261,7 +270,7 @@ paths:
                     example: 1
                   last_page_url:
                     type: string
-                    example: 'http://localhost/api/subscribers?page=1'
+                    example: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
                   links:
                     type: array
                     example:
@@ -270,7 +279,7 @@ paths:
                         label: '&laquo; Previous'
                         active: false
                       -
-                        url: 'http://localhost/api/subscribers?page=1'
+                        url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
                         label: '1'
                         active: true
                       -
@@ -294,7 +303,7 @@ paths:
                     example: null
                   path:
                     type: string
-                    example: 'http://localhost/api/subscribers'
+                    example: 'https://onlineschool-production.up.railway.app/api/subscribers'
                   per_page:
                     type: integer
                     example: 10
@@ -310,17 +319,7 @@ paths:
       tags:
         - Endpoints
       security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-  /api/subscribers/update:
-    post:
+    put:
       summary: 'Update the specified resource in storage.'
       operationId: updateTheSpecifiedResourceInStorage
       description: ''
@@ -338,11 +337,20 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: ab
+                  example: ut
               required:
                 - email
       security: []
-  /api/cources:
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/courses:
     post:
       summary: 'Show the form for creating a new resource.'
       operationId: showTheFormForCreatingANewResource
@@ -361,11 +369,11 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: vel
+                  example: consequuntur
                 description:
                   type: string
                   description: ''
-                  example: aut
+                  example: natus
                 image:
                   type: string
                   format: binary
@@ -395,17 +403,17 @@ paths:
                     data:
                       current_page: 1
                       data: []
-                      first_page_url: 'http://localhost/api/cources?page=1'
+                      first_page_url: 'https://onlineschool-production.up.railway.app/api/courses?page=1'
                       from: null
                       last_page: 1
-                      last_page_url: 'http://localhost/api/cources?page=1'
+                      last_page_url: 'https://onlineschool-production.up.railway.app/api/courses?page=1'
                       links:
                         -
                           url: null
                           label: '&laquo; Previous'
                           active: false
                         -
-                          url: 'http://localhost/api/cources?page=1'
+                          url: 'https://onlineschool-production.up.railway.app/api/courses?page=1'
                           label: '1'
                           active: true
                         -
@@ -413,7 +421,7 @@ paths:
                           label: 'Next &raquo;'
                           active: false
                       next_page_url: null
-                      path: 'http://localhost/api/cources'
+                      path: 'https://onlineschool-production.up.railway.app/api/courses'
                       per_page: 5
                       prev_page_url: null
                       to: null
@@ -421,17 +429,7 @@ paths:
       tags:
         - Endpoints
       security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-  /api/cources/update:
-    post:
+    put:
       summary: 'Update the specified resource in storage.'
       operationId: updateTheSpecifiedResourceInStorage
       description: ''
@@ -449,16 +447,25 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: slnqctpkj
+                  example: aitufe
                 description:
                   type: string
                   description: ''
-                  example: magni
+                  example: qui
               required:
                 - title
                 - description
       security: []
-  /api/cources_time:
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/courses_time:
     post:
       summary: 'Show the form for creating a new resource.'
       operationId: showTheFormForCreatingANewResource
@@ -489,6 +496,15 @@ paths:
       tags:
         - Endpoints
       security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
     delete:
       summary: 'Remove the specified resource from storage.'
       operationId: removeTheSpecifiedResourceFromStorage
@@ -498,8 +514,71 @@ paths:
       tags:
         - Endpoints
       security: []
-  /api/cources_time/update:
+  /api/guest_users:
     post:
+      summary: 'Show the form for creating a new resource.'
+      operationId: showTheFormForCreatingANewResource
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                courseId:
+                  type: string
+                  description: ''
+                  example: rerum
+                firstName:
+                  type: string
+                  description: ''
+                  example: beatae
+                lastName:
+                  type: string
+                  description: ''
+                  example: nam
+                age:
+                  type: string
+                  description: ''
+                  example: ea
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: moore.kristina@example.org
+              required:
+                - courseId
+                - firstName
+                - lastName
+                - age
+                - email
+      security: []
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      security: []
+    put:
       summary: 'Update the specified resource in storage.'
       operationId: updateTheSpecifiedResourceInStorage
       description: ''
@@ -507,6 +586,199 @@ paths:
       responses: {  }
       tags:
         - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                courseId:
+                  type: string
+                  description: ''
+                  example: necessitatibus
+                firstName:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                lastName:
+                  type: string
+                  description: ''
+                  example: perspiciatis
+                age:
+                  type: string
+                  description: ''
+                  example: molestiae
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: assunta17@example.com
+              required:
+                - courseId
+                - firstName
+                - lastName
+                - age
+                - email
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: ''
+                  example: numquam
+              required:
+                - id
+      security: []
+  /api/free_lessons:
+    post:
+      summary: 'Show the form for creating a new resource.'
+      operationId: showTheFormForCreatingANewResource
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: integer
+                  description: ''
+                  example: 7
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 5
+                numberOfMonth:
+                  type: integer
+                  description: ''
+                  example: 20
+                dayOfMonth:
+                  type: integer
+                  description: ''
+                  example: 12
+                startTime:
+                  type: string
+                  description: 'Must be a valid date in the format <code>H:i:s</code>.'
+                  example: '01:19:04'
+                endTime:
+                  type: string
+                  description: 'Must be a valid date in the format <code>H:i:s</code>.'
+                  example: '01:19:04'
+                meetUrl:
+                  type: string
+                  description: 'Must be a valid URL.'
+                  example: 'https://www.smitham.com/dolorum-cupiditate-magnam-officia-ab-quibusdam-quod'
+              required:
+                - userId
+                - courseId
+                - numberOfMonth
+                - dayOfMonth
+                - startTime
+                - endTime
+                - meetUrl
+      security: []
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                numberOfMonth:
+                  type: string
+                  description: ''
+                  example: eaque
+                dayOfMonth:
+                  type: string
+                  description: ''
+                  example: non
+                startTime:
+                  type: string
+                  description: ''
+                  example: laudantium
+                endTime:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: giovani22@example.org
+                meetUrl:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - numberOfMonth
+                - dayOfMonth
+                - startTime
+                - endTime
+                - meetUrl
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: ''
+                  example: dignissimos
+              required:
+                - id
       security: []
 tags:
   -
