@@ -15,11 +15,15 @@ return [
     |
     */
 
-    'paths' => ['*'],
+    'paths' => ['api/*'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3000')],
+    'allowed_origins' => [
+        'http://127.0.0.1:8000',
+        'http://localhost:3000',
+        'http://localhost:8080' // أضف الأصل الذي يحتوي على المنفذ الجديد
+    ],
 
     'allowed_origins_patterns' => [],
 

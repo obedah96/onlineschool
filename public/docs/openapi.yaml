@@ -19,131 +19,21 @@ paths:
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
                 title:
                   type: string
                   description: ''
-                  example: sed
+                  example: esse
                 description:
                   type: string
                   description: ''
-                  example: ipsa
-                image:
-                  type: string
-                  format: binary
-                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  example: sed
               required:
                 - title
                 - description
-                - image
-      security: []
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  current_page: 1
-                  data: []
-                  first_page_url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
-                  from: null
-                  last_page: 1
-                  last_page_url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
-                  links:
-                    -
-                      url: null
-                      label: '&laquo; Previous'
-                      active: false
-                    -
-                      url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
-                      label: '1'
-                      active: true
-                    -
-                      url: null
-                      label: 'Next &raquo;'
-                      active: false
-                  next_page_url: null
-                  path: 'https://onlineschool-production.up.railway.app/api/blogs'
-                  per_page: 5
-                  prev_page_url: null
-                  to: null
-                  total: 0
-                properties:
-                  current_page:
-                    type: integer
-                    example: 1
-                  data:
-                    type: array
-                    example: []
-                  first_page_url:
-                    type: string
-                    example: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
-                  from:
-                    type: string
-                    example: null
-                  last_page:
-                    type: integer
-                    example: 1
-                  last_page_url:
-                    type: string
-                    example: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
-                  links:
-                    type: array
-                    example:
-                      -
-                        url: null
-                        label: '&laquo; Previous'
-                        active: false
-                      -
-                        url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
-                        label: '1'
-                        active: true
-                      -
-                        url: null
-                        label: 'Next &raquo;'
-                        active: false
-                    items:
-                      type: object
-                      properties:
-                        url:
-                          type: string
-                          example: null
-                        label:
-                          type: string
-                          example: '&laquo; Previous'
-                        active:
-                          type: boolean
-                          example: false
-                  next_page_url:
-                    type: string
-                    example: null
-                  path:
-                    type: string
-                    example: 'https://onlineschool-production.up.railway.app/api/blogs'
-                  per_page:
-                    type: integer
-                    example: 5
-                  prev_page_url:
-                    type: string
-                    example: null
-                  to:
-                    type: string
-                    example: null
-                  total:
-                    type: integer
-                    example: 0
-      tags:
-        - Endpoints
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -173,11 +63,11 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: wshhxrcerwpps
+                  example: jmwdentdugu
                 description:
                   type: string
                   description: ''
-                  example: omnis
+                  example: consequatur
               required:
                 - title
                 - description
@@ -187,7 +77,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the blog.'
-        example: aut
+        example: nisi
         required: true
         schema:
           type: string
@@ -209,116 +99,21 @@ paths:
               properties:
                 email:
                   type: string
-                  description: ''
-                  example: temporibus
+                  description: 'Must be a valid email address.'
+                  example: casandra.koss@example.net
               required:
                 - email
       security: []
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
       description: ''
       parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  current_page: 1
-                  data: []
-                  first_page_url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
-                  from: null
-                  last_page: 1
-                  last_page_url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
-                  links:
-                    -
-                      url: null
-                      label: '&laquo; Previous'
-                      active: false
-                    -
-                      url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
-                      label: '1'
-                      active: true
-                    -
-                      url: null
-                      label: 'Next &raquo;'
-                      active: false
-                  next_page_url: null
-                  path: 'https://onlineschool-production.up.railway.app/api/subscribers'
-                  per_page: 10
-                  prev_page_url: null
-                  to: null
-                  total: 0
-                properties:
-                  current_page:
-                    type: integer
-                    example: 1
-                  data:
-                    type: array
-                    example: []
-                  first_page_url:
-                    type: string
-                    example: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
-                  from:
-                    type: string
-                    example: null
-                  last_page:
-                    type: integer
-                    example: 1
-                  last_page_url:
-                    type: string
-                    example: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
-                  links:
-                    type: array
-                    example:
-                      -
-                        url: null
-                        label: '&laquo; Previous'
-                        active: false
-                      -
-                        url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
-                        label: '1'
-                        active: true
-                      -
-                        url: null
-                        label: 'Next &raquo;'
-                        active: false
-                    items:
-                      type: object
-                      properties:
-                        url:
-                          type: string
-                          example: null
-                        label:
-                          type: string
-                          example: '&laquo; Previous'
-                        active:
-                          type: boolean
-                          example: false
-                  next_page_url:
-                    type: string
-                    example: null
-                  path:
-                    type: string
-                    example: 'https://onlineschool-production.up.railway.app/api/subscribers'
-                  per_page:
-                    type: integer
-                    example: 10
-                  prev_page_url:
-                    type: string
-                    example: null
-                  to:
-                    type: string
-                    example: null
-                  total:
-                    type: integer
-                    example: 0
+      responses: {  }
       tags:
         - Endpoints
       security: []
+  '/api/subscribers/{id}':
     put:
       summary: 'Update the specified resource in storage.'
       operationId: updateTheSpecifiedResourceInStorage
@@ -337,19 +132,19 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: ut
+                  example: sint
               required:
                 - email
       security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the subscriber.'
+        example: qui
+        required: true
+        schema:
+          type: string
   /api/courses:
     post:
       summary: 'Show the form for creating a new resource.'
@@ -362,73 +157,32 @@ paths:
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
                 title:
                   type: string
                   description: ''
-                  example: consequuntur
+                  example: et
                 description:
                   type: string
                   description: ''
-                  example: natus
-                image:
-                  type: string
-                  format: binary
-                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  example: necessitatibus
               required:
                 - title
                 - description
-                - image
       security: []
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
       description: ''
       parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                example:
-                  -
-                    status: success
-                    data:
-                      current_page: 1
-                      data: []
-                      first_page_url: 'https://onlineschool-production.up.railway.app/api/courses?page=1'
-                      from: null
-                      last_page: 1
-                      last_page_url: 'https://onlineschool-production.up.railway.app/api/courses?page=1'
-                      links:
-                        -
-                          url: null
-                          label: '&laquo; Previous'
-                          active: false
-                        -
-                          url: 'https://onlineschool-production.up.railway.app/api/courses?page=1'
-                          label: '1'
-                          active: true
-                        -
-                          url: null
-                          label: 'Next &raquo;'
-                          active: false
-                      next_page_url: null
-                      path: 'https://onlineschool-production.up.railway.app/api/courses'
-                      per_page: 5
-                      prev_page_url: null
-                      to: null
-                      total: 0
+      responses: {  }
       tags:
         - Endpoints
       security: []
+  '/api/courses/{id}':
     put:
       summary: 'Update the specified resource in storage.'
       operationId: updateTheSpecifiedResourceInStorage
@@ -447,24 +201,24 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: aitufe
+                  example: kuwxxurnuhuygkn
                 description:
                   type: string
                   description: ''
-                  example: qui
+                  example: neque
               required:
                 - title
                 - description
       security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the course.'
+        example: sed
+        required: true
+        schema:
+          type: string
   /api/courses_time:
     post:
       summary: 'Show the form for creating a new resource.'
@@ -474,36 +228,39 @@ paths:
       responses: {  }
       tags:
         - Endpoints
-      security: []
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
-      description: ''
-      parameters: []
-      responses:
-        500:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Server Error'
-                properties:
-                  message:
-                    type: string
-                    example: 'Server Error'
-      tags:
-        - Endpoints
-      security: []
-    put:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                course_id:
+                  type: string
+                  description: ''
+                  example: animi
+                courseMonth:
+                  type: string
+                  description: ''
+                  example: possimus
+                start_time:
+                  type: string
+                  description: ''
+                  example: sed
+                end_time:
+                  type: string
+                  description: ''
+                  example: commodi
+                day_of_month:
+                  type: string
+                  description: ''
+                  example: tempore
+              required:
+                - course_id
+                - courseMonth
+                - start_time
+                - end_time
+                - day_of_month
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -514,6 +271,25 @@ paths:
       tags:
         - Endpoints
       security: []
+  '/api/courses_time/{id}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the courses time.'
+        example: dolor
+        required: true
+        schema:
+          type: string
   /api/guest_users:
     post:
       summary: 'Show the form for creating a new resource.'
@@ -533,86 +309,23 @@ paths:
                 courseId:
                   type: string
                   description: ''
-                  example: rerum
+                  example: porro
                 firstName:
                   type: string
                   description: ''
-                  example: beatae
+                  example: voluptate
                 lastName:
                   type: string
                   description: ''
-                  example: nam
+                  example: quae
                 age:
                   type: string
                   description: ''
-                  example: ea
+                  example: laborum
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: moore.kristina@example.org
-              required:
-                - courseId
-                - firstName
-                - lastName
-                - age
-                - email
-      security: []
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
-      description: ''
-      parameters: []
-      responses:
-        500:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Server Error'
-                properties:
-                  message:
-                    type: string
-                    example: 'Server Error'
-      tags:
-        - Endpoints
-      security: []
-    put:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                courseId:
-                  type: string
-                  description: ''
-                  example: necessitatibus
-                firstName:
-                  type: string
-                  description: ''
-                  example: voluptatem
-                lastName:
-                  type: string
-                  description: ''
-                  example: perspiciatis
-                age:
-                  type: string
-                  description: ''
-                  example: molestiae
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: assunta17@example.com
+                  example: hauck.neva@example.com
               required:
                 - courseId
                 - firstName
@@ -638,10 +351,62 @@ paths:
                 id:
                   type: string
                   description: ''
-                  example: numquam
+                  example: consequatur
               required:
                 - id
       security: []
+  '/api/guest_users/{id}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                courseId:
+                  type: string
+                  description: ''
+                  example: aut
+                firstName:
+                  type: string
+                  description: ''
+                  example: corporis
+                lastName:
+                  type: string
+                  description: ''
+                  example: corrupti
+                age:
+                  type: string
+                  description: ''
+                  example: voluptatum
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: elmore45@example.net
+              required:
+                - courseId
+                - firstName
+                - lastName
+                - age
+                - email
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the guest user.'
+        example: non
+        required: true
+        schema:
+          type: string
   /api/free_lessons:
     post:
       summary: 'Show the form for creating a new resource.'
@@ -661,31 +426,27 @@ paths:
                 userId:
                   type: integer
                   description: ''
-                  example: 7
+                  example: 2
                 courseId:
                   type: integer
                   description: ''
-                  example: 5
+                  example: 7
                 numberOfMonth:
                   type: integer
                   description: ''
-                  example: 20
+                  example: 4
                 dayOfMonth:
                   type: integer
                   description: ''
-                  example: 12
+                  example: 11
                 startTime:
                   type: string
                   description: 'Must be a valid date in the format <code>H:i:s</code>.'
-                  example: '01:19:04'
+                  example: '19:19:51'
                 endTime:
                   type: string
                   description: 'Must be a valid date in the format <code>H:i:s</code>.'
-                  example: '01:19:04'
-                meetUrl:
-                  type: string
-                  description: 'Must be a valid URL.'
-                  example: 'https://www.smitham.com/dolorum-cupiditate-magnam-officia-ab-quibusdam-quod'
+                  example: '19:19:51'
               required:
                 - userId
                 - courseId
@@ -693,70 +454,6 @@ paths:
                 - dayOfMonth
                 - startTime
                 - endTime
-                - meetUrl
-      security: []
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
-      description: ''
-      parameters: []
-      responses:
-        500:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Server Error'
-                properties:
-                  message:
-                    type: string
-                    example: 'Server Error'
-      tags:
-        - Endpoints
-      security: []
-    put:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                numberOfMonth:
-                  type: string
-                  description: ''
-                  example: eaque
-                dayOfMonth:
-                  type: string
-                  description: ''
-                  example: non
-                startTime:
-                  type: string
-                  description: ''
-                  example: laudantium
-                endTime:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: giovani22@example.org
-                meetUrl:
-                  type: string
-                  description: ''
-                  example: et
-              required:
-                - numberOfMonth
-                - dayOfMonth
-                - startTime
-                - endTime
-                - meetUrl
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -776,10 +473,62 @@ paths:
                 id:
                   type: string
                   description: ''
-                  example: dignissimos
+                  example: consequatur
               required:
                 - id
       security: []
+  '/api/free_lessons/{id}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                numberOfMonth:
+                  type: string
+                  description: ''
+                  example: aliquid
+                dayOfMonth:
+                  type: string
+                  description: ''
+                  example: temporibus
+                startTime:
+                  type: string
+                  description: ''
+                  example: eum
+                endTime:
+                  type: string
+                  description: ''
+                  example: commodi
+                meetUrl:
+                  type: string
+                  description: ''
+                  example: possimus
+              required:
+                - numberOfMonth
+                - dayOfMonth
+                - startTime
+                - endTime
+                - meetUrl
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the free lesson.'
+        example: pariatur
+        required: true
+        schema:
+          type: string
 tags:
   -
     name: Endpoints

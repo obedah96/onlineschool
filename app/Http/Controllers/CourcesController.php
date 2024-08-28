@@ -50,18 +50,19 @@ class CourcesController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
+        /*
         $file_extintion = $request->image->getClientOriginalExtension();
         $file_name = time() . '.' . $file_extintion;
         $path = 'images/courses/' . $file_name;   
         Storage::disk('public')->put($path, $request->image);
         $imageUrl = asset($path); 
+        */
         $course = Cources::create([
             'title' => $request->title,
             'teacher' => $request->teacher,
             'description' => $request->description,
-            'image'=>$imageUrl,
+            'image'=>$request->imagePath,
             'price'=>$request->price,
             'course_outline'=>$request->course_outline,
             'duration_in_session'=>$request->duration_in_session,
@@ -115,6 +116,7 @@ class CourcesController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required',
         ]);
+        /*
         if ($request->hasFile('image')) {
             // حذف الصورة القديمة إذا وجدت
             if ($course->image) {
@@ -132,9 +134,9 @@ class CourcesController extends Controller
         $file_name = time() . '.' . $file_extintion;
         $path = 'images/courses';
         Storage::disk('public')->put($path, $request->image);
-    
+        */
             // تحديث مسار الصورة في قاعدة البيانات
-        $course->image = $file_name;
+        $course->image = $request->inagePath;
         $course->title = $request->title;
         $course->teacher=$request->teacher;
         $course->description = $request->description;

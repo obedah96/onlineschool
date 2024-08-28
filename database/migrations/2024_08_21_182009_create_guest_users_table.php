@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('guest_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('courseId')->constrained('cources');
+            $table->foreignId('courseId')->constrained('cources')->onDelete('cascade');;
             $table->text('firstName');
             $table->text('lastName');
             $table->integer('age');

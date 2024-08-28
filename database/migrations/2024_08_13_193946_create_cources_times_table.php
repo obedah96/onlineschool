@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cources_times', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_id')->constrained('cources');
+            $table->foreignId('course_id')->constrained('cources')->onDelete('cascade');;
             $table->integer('courseMonth');
             $table->unsignedTinyInteger('day_of_month');
             $table->time('start_time');

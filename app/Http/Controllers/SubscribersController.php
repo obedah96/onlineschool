@@ -45,10 +45,22 @@ class SubscribersController extends Controller
      */
     public function create(Request $request)
     {
-        $request->validate(['email' => 'required',]);
-        subscribers::create([
-            'email'=>$request->email]);
-        return response()->json(['message'=>'subscriber created successfully'],201);
+        
+        $rules = [
+            'email' => 'required|email|unique:subscribers',
+        ];
+
+        // تخصيص الرسائل إذا كانت هناك أخطاء
+        /*$messages = [
+            'email.unique' => 'this user already exsist',
+        ];*/
+
+        // التحقق من صحة البيانات
+        $validated = $request->validate($rules);
+        if($validated){
+        subscribers::create($validated);
+        return response()->json(['message' => 'Subscriber created successfully.']);
+        }
     }
 
     /**

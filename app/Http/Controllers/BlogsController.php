@@ -55,25 +55,25 @@ class BlogsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+            
         ]);
+        /*
         if ($request->hasFile('image')) {
             // تحديد المسار النسبي داخل مجلد التخزين
-            $directory = 'uploads/images/blogs';
+            $directory = 'uploads';
             if (!Storage::disk('public')->exists($directory)) {
                 Storage::disk('public')->makeDirectory($directory);
             }
-            
-            
+            if (Storage::disk('public')->exists($directory)) {
+                echo 'file exists';
+            }
             // الحصول على الملف من الطلب
             $image = $request->file('image');
         
             // تحديد اسم الملف
             $fileName = time() . '.' . $image->getClientOriginalExtension();
-        
             // إنشاء المسار الكامل داخل مجلد التخزين
             $path = $directory . '/' . $fileName;
-        
             // حفظ الصورة في المجلد المحدد داخل التخزين باستخدام Storage facade
             Storage::disk('public')->put($path, file_get_contents($image));}
         /*
@@ -84,14 +84,10 @@ class BlogsController extends Controller
             // Create the directory if it doesn't exist
             if (!file_exists($directory)) {
                 mkdir($directory, 0775, true);
-            }
-    
             // Get the file from the request
             $image = $request->file('image');
-    
             // Define a file name
             $fileName = time() . '.' . $image->getClientOriginalExtension();
-    
             // Save the file to the public folder
             $path = $image->move($directory, $fileName);
         }
@@ -99,20 +95,15 @@ class BlogsController extends Controller
         /*$file_extension = $request->file('image')->getClientOriginalExtension();
         $file_name = time() . '.' . $file_extension;
         $path = 'blogs/' . $file_name;
-
         // استخدام Storage facade لتخزين الصورة
         Storage::disk('public')->put($path, file_get_contents($request->file('image')));
         */
-        // حفظ المسار في قاعدة البيانات
+        
         Blogs::create([
             'title' => $request->title,
             'description' => $request->description,
-            'ImagePath' => $path,
+            'ImagePath' => $request->imagePath,
         ]);
-
-        return response()->json([
-            'message' => 'تم حفظ الصورة والبيانات بنجاح',
-        ], 201);
     }
 
 
@@ -161,6 +152,7 @@ class BlogsController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required',
         ]);
+        /*
         if ($request->hasFile('image') && $blog->ImagePath) {
             Storage::disk('public')->delete('blogs/' . $blog->ImagePath);
         }
@@ -173,6 +165,8 @@ class BlogsController extends Controller
             // تحديث مسار الصورة في قاعدة البيانات
         $blog->ImagePath =Storage::disk('public')->url($path);
         }
+        */
+        $blog->ImagePath =$request->imagePath;
         $blog->title = $request->title;
         $blog->description = $request->description;
     

@@ -15,7 +15,7 @@ endpoints:
       authenticated: false
       custom: []
     headers:
-      Content-Type: multipart/form-data
+      Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -26,7 +26,7 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: sed
+        example: esse
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,66 +35,16 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: ipsa
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      image:
-        name: image
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: true
-        example: null
-        type: file
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
     cleanBodyParameters:
-      title: sed
-      description: ipsa
-    fileParameters:
-      image: null
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/blogs
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+      title: esse
+      description: sed
     fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"current_page":1,"data":[],"first_page_url":"https:\/\/onlineschool-production.up.railway.app\/api\/blogs?page=1","from":null,"last_page":1,"last_page_url":"https:\/\/onlineschool-production.up.railway.app\/api\/blogs?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/onlineschool-production.up.railway.app\/api\/blogs?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"https:\/\/onlineschool-production.up.railway.app\/api\/blogs","per_page":5,"prev_page_url":null,"to":null,"total":0}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: 'http://localhost:3000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -122,13 +72,13 @@ endpoints:
         name: id
         description: 'The ID of the blog.'
         required: true
-        example: aut
+        example: nisi
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: aut
+      id: nisi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -136,7 +86,7 @@ endpoints:
         name: title
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: wshhxrcerwpps
+        example: jmwdentdugu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -145,14 +95,14 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: omnis
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: wshhxrcerwpps
-      description: omnis
+      title: jmwdentdugu
+      description: consequatur
     fileParameters: []
     responses: []
     responseFields: []
@@ -214,15 +164,15 @@ endpoints:
     bodyParameters:
       email:
         name: email
-        description: ''
+        description: 'Must be a valid email address.'
         required: true
-        example: temporibus
+        example: casandra.koss@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: temporibus
+      email: casandra.koss@example.net
     fileParameters: []
     responses: []
     responseFields: []
@@ -233,48 +183,8 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/subscribers
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"current_page":1,"data":[],"first_page_url":"https:\/\/onlineschool-production.up.railway.app\/api\/subscribers?page=1","from":null,"last_page":1,"last_page_url":"https:\/\/onlineschool-production.up.railway.app\/api\/subscribers?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/onlineschool-production.up.railway.app\/api\/subscribers?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"https:\/\/onlineschool-production.up.railway.app\/api\/subscribers","per_page":10,"prev_page_url":null,"to":null,"total":0}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: 'http://localhost:3000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - PUT
-    uri: api/subscribers
+    uri: 'api/subscribers/{id}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -287,202 +197,32 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: ''
-        required: true
-        example: ut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email: ut
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: api/subscribers
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/courses
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Show the form for creating a new resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: multipart/form-data
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      title:
-        name: title
-        description: ''
-        required: true
-        example: consequuntur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      description:
-        name: description
-        description: ''
-        required: true
-        example: natus
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      image:
-        name: image
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: true
-        example: null
-        type: file
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      title: consequuntur
-      description: natus
-    fileParameters:
-      image: null
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/courses
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '[{"status":"success","data":{"current_page":1,"data":[],"first_page_url":"https:\/\/onlineschool-production.up.railway.app\/api\/courses?page=1","from":null,"last_page":1,"last_page_url":"https:\/\/onlineschool-production.up.railway.app\/api\/courses?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/onlineschool-production.up.railway.app\/api\/courses?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"https:\/\/onlineschool-production.up.railway.app\/api\/courses","per_page":5,"prev_page_url":null,"to":null,"total":0}}]'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: 'http://localhost:3000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: api/courses
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      title:
-        name: title
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: aitufe
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      description:
-        name: description
-        description: ''
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the subscriber.'
         required: true
         example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
+    cleanUrlParameters:
+      id: qui
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: ''
+        required: true
+        example: sint
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
     cleanBodyParameters:
-      title: aitufe
-      description: qui
+      email: sint
     fileParameters: []
     responses: []
     responseFields: []
@@ -494,175 +234,42 @@ endpoints:
   -
     httpMethods:
       - DELETE
+    uri: api/subscribers
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
     uri: api/courses
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/courses_time
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Show the form for creating a new resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/courses_time
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: 'http://localhost:3000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: api/courses_time
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: api/courses_time
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/guest_users
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
       title: 'Show the form for creating a new resource.'
       description: ''
       authenticated: false
@@ -675,131 +282,17 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      courseId:
-        name: courseId
+      title:
+        name: title
         description: ''
         required: true
-        example: rerum
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      firstName:
-        name: firstName
-        description: ''
-        required: true
-        example: beatae
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      lastName:
-        name: lastName
-        description: ''
-        required: true
-        example: nam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      age:
-        name: age
-        description: ''
-        required: true
-        example: ea
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: moore.kristina@example.org
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      courseId: rerum
-      firstName: beatae
-      lastName: nam
-      age: ea
-      email: moore.kristina@example.org
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/guest_users
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: 'http://localhost:3000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: api/guest_users
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      courseId:
-        name: courseId
+      description:
+        name: description
         description: ''
         required: true
         example: necessitatibus
@@ -807,11 +300,292 @@ endpoints:
         enumValues: []
         exampleWasSpecified: false
         custom: []
+    cleanBodyParameters:
+      title: et
+      description: necessitatibus
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/courses/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course.'
+        required: true
+        example: sed
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: sed
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: kuwxxurnuhuygkn
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: neque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      title: kuwxxurnuhuygkn
+      description: neque
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/courses
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/courses_time
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show the form for creating a new resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      course_id:
+        name: course_id
+        description: ''
+        required: true
+        example: animi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      courseMonth:
+        name: courseMonth
+        description: ''
+        required: true
+        example: possimus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      start_time:
+        name: start_time
+        description: ''
+        required: true
+        example: sed
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      end_time:
+        name: end_time
+        description: ''
+        required: true
+        example: commodi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      day_of_month:
+        name: day_of_month
+        description: ''
+        required: true
+        example: tempore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      course_id: animi
+      courseMonth: possimus
+      start_time: sed
+      end_time: commodi
+      day_of_month: tempore
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/courses_time/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the courses time.'
+        required: true
+        example: dolor
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: dolor
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/courses_time
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/guest_users
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show the form for creating a new resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      courseId:
+        name: courseId
+        description: ''
+        required: true
+        example: porro
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       firstName:
         name: firstName
         description: ''
         required: true
-        example: voluptatem
+        example: voluptate
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -820,7 +594,7 @@ endpoints:
         name: lastName
         description: ''
         required: true
-        example: perspiciatis
+        example: quae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -829,7 +603,7 @@ endpoints:
         name: age
         description: ''
         required: true
-        example: molestiae
+        example: laborum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -838,17 +612,107 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: assunta17@example.com
+        example: hauck.neva@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      courseId: necessitatibus
-      firstName: voluptatem
-      lastName: perspiciatis
-      age: molestiae
-      email: assunta17@example.com
+      courseId: porro
+      firstName: voluptate
+      lastName: quae
+      age: laborum
+      email: hauck.neva@example.com
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/guest_users/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the guest user.'
+        required: true
+        example: non
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: non
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      courseId:
+        name: courseId
+        description: ''
+        required: true
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      firstName:
+        name: firstName
+        description: ''
+        required: true
+        example: corporis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      lastName:
+        name: lastName
+        description: ''
+        required: true
+        example: corrupti
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      age:
+        name: age
+        description: ''
+        required: true
+        example: voluptatum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: elmore45@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      courseId: aut
+      firstName: corporis
+      lastName: corrupti
+      age: voluptatum
+      email: elmore45@example.net
     fileParameters: []
     responses: []
     responseFields: []
@@ -882,13 +746,13 @@ endpoints:
         name: id
         description: ''
         required: true
-        example: numquam
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id: numquam
+      id: consequatur
     fileParameters: []
     responses: []
     responseFields: []
@@ -922,7 +786,7 @@ endpoints:
         name: userId
         description: ''
         required: true
-        example: 7
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -931,7 +795,7 @@ endpoints:
         name: courseId
         description: ''
         required: true
-        example: 5
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -940,7 +804,7 @@ endpoints:
         name: numberOfMonth
         description: ''
         required: true
-        example: 20
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -949,7 +813,7 @@ endpoints:
         name: dayOfMonth
         description: ''
         required: true
-        example: 12
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -958,7 +822,7 @@ endpoints:
         name: startTime
         description: 'Must be a valid date in the format <code>H:i:s</code>.'
         required: true
-        example: '01:19:04'
+        example: '19:19:51'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -967,28 +831,18 @@ endpoints:
         name: endTime
         description: 'Must be a valid date in the format <code>H:i:s</code>.'
         required: true
-        example: '01:19:04'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      meetUrl:
-        name: meetUrl
-        description: 'Must be a valid URL.'
-        required: true
-        example: 'https://www.smitham.com/dolorum-cupiditate-magnam-officia-ab-quibusdam-quod'
+        example: '19:19:51'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      userId: 7
-      courseId: 5
-      numberOfMonth: 20
-      dayOfMonth: 12
-      startTime: '01:19:04'
-      endTime: '01:19:04'
-      meetUrl: 'https://www.smitham.com/dolorum-cupiditate-magnam-officia-ab-quibusdam-quod'
+      userId: 2
+      courseId: 7
+      numberOfMonth: 4
+      dayOfMonth: 11
+      startTime: '19:19:51'
+      endTime: '19:19:51'
     fileParameters: []
     responses: []
     responseFields: []
@@ -999,51 +853,8 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/free_lessons
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: 'http://localhost:3000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - PUT
-    uri: api/free_lessons
+    uri: 'api/free_lessons/{id}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -1056,8 +867,18 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the free lesson.'
+        required: true
+        example: pariatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: pariatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1065,7 +886,7 @@ endpoints:
         name: numberOfMonth
         description: ''
         required: true
-        example: eaque
+        example: aliquid
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1074,7 +895,7 @@ endpoints:
         name: dayOfMonth
         description: ''
         required: true
-        example: non
+        example: temporibus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1083,16 +904,16 @@ endpoints:
         name: startTime
         description: ''
         required: true
-        example: laudantium
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       endTime:
         name: endTime
-        description: 'Must be a valid email address.'
+        description: ''
         required: true
-        example: giovani22@example.org
+        example: commodi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1101,17 +922,17 @@ endpoints:
         name: meetUrl
         description: ''
         required: true
-        example: et
+        example: possimus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      numberOfMonth: eaque
-      dayOfMonth: non
-      startTime: laudantium
-      endTime: giovani22@example.org
-      meetUrl: et
+      numberOfMonth: aliquid
+      dayOfMonth: temporibus
+      startTime: eum
+      endTime: commodi
+      meetUrl: possimus
     fileParameters: []
     responses: []
     responseFields: []
@@ -1145,13 +966,13 @@ endpoints:
         name: id
         description: ''
         required: true
-        example: dignissimos
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      id: dignissimos
+      id: consequatur
     fileParameters: []
     responses: []
     responseFields: []

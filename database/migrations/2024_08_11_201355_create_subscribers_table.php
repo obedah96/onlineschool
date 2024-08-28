@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique()->nullable()->validate([
-                'email' => 'required|email|max:255',
-            ]);
-            
+            $table->string('email')->nullable(); 
             $table->timestamps();
         });
     }

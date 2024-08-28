@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('free_lessons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userId')->constrained('guest_users');
-            $table->foreignId('courseId')->constrained('cources');
+            $table->foreignId('userId')->constrained('guest_users')->onDelete('cascade');;
+            $table->foreignId('courseId')->constrained('cources')->onDelete('cascade');;
             $table->integer('numberOfMonth');
             $table->integer('dayOfMonth');
             $table->time("startTime");
