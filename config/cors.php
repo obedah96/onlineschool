@@ -19,11 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [
-        'http://127.0.0.1:8000',
-        'http://localhost:3000',
-        'http://localhost:8080' // أضف الأصل الذي يحتوي على المنفذ الجديد
-    ],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
