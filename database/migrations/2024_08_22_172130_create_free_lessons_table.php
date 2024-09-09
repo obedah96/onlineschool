@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('free_lessons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userId')->constrained('guest_users')->onDelete('cascade');;
-            $table->foreignId('courseId')->constrained('cources')->onDelete('cascade');;
-            $table->integer('numberOfMonth');
-            $table->integer('dayOfMonth');
-            $table->time("startTime");
-            $table->time("endTime");
+            $table->foreignId('userId')->constrained('guest_users')->onDelete('cascade');
+            $table->foreignId('courseId')->constrained('cources')->onDelete('cascade');
+            $table->foreignId('sessionTime')->constrained('cources_times')->onDelete('cascade');
             $table->text('meetUrl');
+            $table->text('eventId');
             $table->timestamps();
         });
     }

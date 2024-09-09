@@ -26,14 +26,218 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: esse
+                  example: ex
                 description:
                   type: string
                   description: ''
-                  example: sed
+                  example: alias
               required:
                 - title
                 - description
+      security: []
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 1
+                      title: fdgdfg
+                      description: fgdfgdf
+                      ImagePath: 'https://i.postimg.cc/jjfjwTWs/image.png'
+                      created_at: '2024-08-26T19:41:38.000000Z'
+                      updated_at: '2024-08-27T14:47:47.000000Z'
+                    -
+                      id: 2
+                      title: hhh
+                      description: 'first by postman'
+                      ImagePath: 'https://onlineschool-production.up.railway.app/storage/blogs/1724705235.jpg'
+                      created_at: '2024-08-26T20:47:15.000000Z'
+                      updated_at: '2024-08-26T20:47:15.000000Z'
+                    -
+                      id: 3
+                      title: mmm
+                      description: 'first by postman'
+                      ImagePath: 'https://onlineschool-production.up.railway.app/storage/blogs/1724705869.jpg'
+                      created_at: '2024-08-26T20:57:49.000000Z'
+                      updated_at: '2024-08-26T20:57:49.000000Z'
+                    -
+                      id: 4
+                      title: kkk
+                      description: 'first by postman'
+                      ImagePath: uploads/images/blogs/1724743149.jpg
+                      created_at: '2024-08-27T07:19:09.000000Z'
+                      updated_at: '2024-08-27T07:19:09.000000Z'
+                    -
+                      id: 5
+                      title: kkk
+                      description: 'first by postman'
+                      ImagePath: uploads/images/blogs/1724746595.jpg
+                      created_at: '2024-08-27T08:16:35.000000Z'
+                      updated_at: '2024-08-27T08:16:35.000000Z'
+                  first_page_url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
+                  from: 1
+                  last_page: 2
+                  last_page_url: 'https://onlineschool-production.up.railway.app/api/blogs?page=2'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: 'https://onlineschool-production.up.railway.app/api/blogs?page=2'
+                      label: '2'
+                      active: false
+                    -
+                      url: 'https://onlineschool-production.up.railway.app/api/blogs?page=2'
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: 'https://onlineschool-production.up.railway.app/api/blogs?page=2'
+                  path: 'https://onlineschool-production.up.railway.app/api/blogs'
+                  per_page: 5
+                  prev_page_url: null
+                  to: 5
+                  total: 9
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        title: fdgdfg
+                        description: fgdfgdf
+                        ImagePath: 'https://i.postimg.cc/jjfjwTWs/image.png'
+                        created_at: '2024-08-26T19:41:38.000000Z'
+                        updated_at: '2024-08-27T14:47:47.000000Z'
+                      -
+                        id: 2
+                        title: hhh
+                        description: 'first by postman'
+                        ImagePath: 'https://onlineschool-production.up.railway.app/storage/blogs/1724705235.jpg'
+                        created_at: '2024-08-26T20:47:15.000000Z'
+                        updated_at: '2024-08-26T20:47:15.000000Z'
+                      -
+                        id: 3
+                        title: mmm
+                        description: 'first by postman'
+                        ImagePath: 'https://onlineschool-production.up.railway.app/storage/blogs/1724705869.jpg'
+                        created_at: '2024-08-26T20:57:49.000000Z'
+                        updated_at: '2024-08-26T20:57:49.000000Z'
+                      -
+                        id: 4
+                        title: kkk
+                        description: 'first by postman'
+                        ImagePath: uploads/images/blogs/1724743149.jpg
+                        created_at: '2024-08-27T07:19:09.000000Z'
+                        updated_at: '2024-08-27T07:19:09.000000Z'
+                      -
+                        id: 5
+                        title: kkk
+                        description: 'first by postman'
+                        ImagePath: uploads/images/blogs/1724746595.jpg
+                        created_at: '2024-08-27T08:16:35.000000Z'
+                        updated_at: '2024-08-27T08:16:35.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        title:
+                          type: string
+                          example: fdgdfg
+                        description:
+                          type: string
+                          example: fgdfgdf
+                        ImagePath:
+                          type: string
+                          example: 'https://i.postimg.cc/jjfjwTWs/image.png'
+                        created_at:
+                          type: string
+                          example: '2024-08-26T19:41:38.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-08-27T14:47:47.000000Z'
+                  first_page_url:
+                    type: string
+                    example: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 2
+                  last_page_url:
+                    type: string
+                    example: 'https://onlineschool-production.up.railway.app/api/blogs?page=2'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'https://onlineschool-production.up.railway.app/api/blogs?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'https://onlineschool-production.up.railway.app/api/blogs?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'https://onlineschool-production.up.railway.app/api/blogs?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: 'https://onlineschool-production.up.railway.app/api/blogs?page=2'
+                  path:
+                    type: string
+                    example: 'https://onlineschool-production.up.railway.app/api/blogs'
+                  per_page:
+                    type: integer
+                    example: 5
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 5
+                  total:
+                    type: integer
+                    example: 9
+      tags:
+        - Endpoints
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -63,11 +267,11 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: jmwdentdugu
+                  example: gaxdezpuzycfev
                 description:
                   type: string
                   description: ''
-                  example: consequatur
+                  example: ducimus
               required:
                 - title
                 - description
@@ -77,14 +281,14 @@ paths:
         in: path
         name: id
         description: 'The ID of the blog.'
-        example: nisi
+        example: error
         required: true
         schema:
           type: string
   /api/subscribers:
     post:
-      summary: 'Show the form for creating a new resource.'
-      operationId: showTheFormForCreatingANewResource
+      summary: ''
+      operationId: postApiSubscribers
       description: ''
       parameters: []
       responses: {  }
@@ -100,9 +304,237 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: casandra.koss@example.net
+                  example: lkrajcik@example.net
               required:
                 - email
+      security: []
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 1
+                      email: obedag@gmail.com
+                      created_at: '2024-08-27T13:33:47.000000Z'
+                      updated_at: '2024-08-27T13:33:47.000000Z'
+                    -
+                      id: 3
+                      email: obedahh@gmail.com
+                      created_at: '2024-08-27T13:46:33.000000Z'
+                      updated_at: '2024-08-27T13:46:33.000000Z'
+                    -
+                      id: 4
+                      email: obedag1@gmail.com
+                      created_at: '2024-08-27T14:51:10.000000Z'
+                      updated_at: '2024-08-27T14:51:10.000000Z'
+                    -
+                      id: 5
+                      email: obedahh11111111111@gmail.com
+                      created_at: '2024-08-27T15:11:45.000000Z'
+                      updated_at: '2024-08-27T15:11:45.000000Z'
+                    -
+                      id: 6
+                      email: obedag111111111111111111111111@gmail.com
+                      created_at: '2024-08-27T15:12:49.000000Z'
+                      updated_at: '2024-08-27T15:12:49.000000Z'
+                    -
+                      id: 7
+                      email: aaa@gmail.com
+                      created_at: '2024-08-27T17:05:40.000000Z'
+                      updated_at: '2024-08-27T17:05:40.000000Z'
+                    -
+                      id: 8
+                      email: aaaaa@gmail.com
+                      created_at: '2024-08-27T17:16:02.000000Z'
+                      updated_at: '2024-08-27T17:16:02.000000Z'
+                    -
+                      id: 9
+                      email: aaabbb@gmail.com
+                      created_at: '2024-08-27T17:17:57.000000Z'
+                      updated_at: '2024-08-27T17:17:57.000000Z'
+                    -
+                      id: 10
+                      email: aannnna@gmail.com
+                      created_at: '2024-08-27T17:21:19.000000Z'
+                      updated_at: '2024-08-27T17:21:19.000000Z'
+                    -
+                      id: 11
+                      email: obedahh12@gmail.com
+                      created_at: '2024-08-28T06:27:58.000000Z'
+                      updated_at: '2024-08-28T06:27:58.000000Z'
+                  first_page_url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
+                  from: 1
+                  last_page: 2
+                  last_page_url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=2'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=2'
+                      label: '2'
+                      active: false
+                    -
+                      url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=2'
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=2'
+                  path: 'https://onlineschool-production.up.railway.app/api/subscribers'
+                  per_page: 10
+                  prev_page_url: null
+                  to: 10
+                  total: 19
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        email: obedag@gmail.com
+                        created_at: '2024-08-27T13:33:47.000000Z'
+                        updated_at: '2024-08-27T13:33:47.000000Z'
+                      -
+                        id: 3
+                        email: obedahh@gmail.com
+                        created_at: '2024-08-27T13:46:33.000000Z'
+                        updated_at: '2024-08-27T13:46:33.000000Z'
+                      -
+                        id: 4
+                        email: obedag1@gmail.com
+                        created_at: '2024-08-27T14:51:10.000000Z'
+                        updated_at: '2024-08-27T14:51:10.000000Z'
+                      -
+                        id: 5
+                        email: obedahh11111111111@gmail.com
+                        created_at: '2024-08-27T15:11:45.000000Z'
+                        updated_at: '2024-08-27T15:11:45.000000Z'
+                      -
+                        id: 6
+                        email: obedag111111111111111111111111@gmail.com
+                        created_at: '2024-08-27T15:12:49.000000Z'
+                        updated_at: '2024-08-27T15:12:49.000000Z'
+                      -
+                        id: 7
+                        email: aaa@gmail.com
+                        created_at: '2024-08-27T17:05:40.000000Z'
+                        updated_at: '2024-08-27T17:05:40.000000Z'
+                      -
+                        id: 8
+                        email: aaaaa@gmail.com
+                        created_at: '2024-08-27T17:16:02.000000Z'
+                        updated_at: '2024-08-27T17:16:02.000000Z'
+                      -
+                        id: 9
+                        email: aaabbb@gmail.com
+                        created_at: '2024-08-27T17:17:57.000000Z'
+                        updated_at: '2024-08-27T17:17:57.000000Z'
+                      -
+                        id: 10
+                        email: aannnna@gmail.com
+                        created_at: '2024-08-27T17:21:19.000000Z'
+                        updated_at: '2024-08-27T17:21:19.000000Z'
+                      -
+                        id: 11
+                        email: obedahh12@gmail.com
+                        created_at: '2024-08-28T06:27:58.000000Z'
+                        updated_at: '2024-08-28T06:27:58.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        email:
+                          type: string
+                          example: obedag@gmail.com
+                        created_at:
+                          type: string
+                          example: '2024-08-27T13:33:47.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-08-27T13:33:47.000000Z'
+                  first_page_url:
+                    type: string
+                    example: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 2
+                  last_page_url:
+                    type: string
+                    example: 'https://onlineschool-production.up.railway.app/api/subscribers?page=2'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'https://onlineschool-production.up.railway.app/api/subscribers?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: 'https://onlineschool-production.up.railway.app/api/subscribers?page=2'
+                  path:
+                    type: string
+                    example: 'https://onlineschool-production.up.railway.app/api/subscribers'
+                  per_page:
+                    type: integer
+                    example: 10
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 10
+                  total:
+                    type: integer
+                    example: 19
+      tags:
+        - Endpoints
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -132,7 +564,7 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: sint
+                  example: quae
               required:
                 - email
       security: []
@@ -141,7 +573,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the subscriber.'
-        example: qui
+        example: quaerat
         required: true
         schema:
           type: string
@@ -164,14 +596,60 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: et
+                  example: consequuntur
                 description:
                   type: string
                   description: ''
-                  example: necessitatibus
+                  example: ea
               required:
                 - title
                 - description
+      security: []
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    status: success
+                    data:
+                      current_page: 1
+                      data: []
+                      first_page_url: 'https://onlineschool-production.up.railway.app/api/courses?page=1'
+                      from: null
+                      last_page: 1
+                      last_page_url: 'https://onlineschool-production.up.railway.app/api/courses?page=1'
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: 'https://onlineschool-production.up.railway.app/api/courses?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      next_page_url: null
+                      path: 'https://onlineschool-production.up.railway.app/api/courses'
+                      per_page: 5
+                      prev_page_url: null
+                      to: null
+                      total: 0
+      tags:
+        - Endpoints
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -201,11 +679,11 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kuwxxurnuhuygkn
+                  example: psxtwauaow
                 description:
                   type: string
                   description: ''
-                  example: neque
+                  example: veritatis
               required:
                 - title
                 - description
@@ -215,7 +693,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the course.'
-        example: sed
+        example: tempora
         required: true
         schema:
           type: string
@@ -238,29 +716,50 @@ paths:
                 course_id:
                   type: string
                   description: ''
-                  example: animi
+                  example: qui
                 courseMonth:
                   type: string
                   description: ''
-                  example: possimus
+                  example: id
                 start_time:
                   type: string
                   description: ''
-                  example: sed
+                  example: inventore
                 end_time:
                   type: string
                   description: ''
-                  example: commodi
+                  example: dignissimos
                 day_of_month:
                   type: string
                   description: ''
-                  example: tempore
+                  example: quam
               required:
                 - course_id
                 - courseMonth
                 - start_time
                 - end_time
                 - day_of_month
+      security: []
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -286,7 +785,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the courses time.'
-        example: dolor
+        example: quidem
         required: true
         schema:
           type: string
@@ -309,29 +808,75 @@ paths:
                 courseId:
                   type: string
                   description: ''
-                  example: porro
+                  example: magnam
                 firstName:
                   type: string
                   description: ''
-                  example: voluptate
+                  example: quam
                 lastName:
                   type: string
                   description: ''
-                  example: quae
+                  example: sit
                 age:
                   type: string
                   description: ''
-                  example: laborum
+                  example: aut
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: hauck.neva@example.com
+                  example: gcronin@example.org
               required:
                 - courseId
                 - firstName
                 - lastName
                 - age
                 - email
+      security: []
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    status: success
+                    data:
+                      current_page: 1
+                      data: []
+                      first_page_url: 'https://onlineschool-production.up.railway.app/api/guest_users?page=1'
+                      from: null
+                      last_page: 1
+                      last_page_url: 'https://onlineschool-production.up.railway.app/api/guest_users?page=1'
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: 'https://onlineschool-production.up.railway.app/api/guest_users?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      next_page_url: null
+                      path: 'https://onlineschool-production.up.railway.app/api/guest_users'
+                      per_page: 5
+                      prev_page_url: null
+                      to: null
+                      total: 0
+      tags:
+        - Endpoints
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -351,7 +896,7 @@ paths:
                 id:
                   type: string
                   description: ''
-                  example: consequatur
+                  example: quam
               required:
                 - id
       security: []
@@ -374,23 +919,23 @@ paths:
                 courseId:
                   type: string
                   description: ''
-                  example: aut
+                  example: maxime
                 firstName:
                   type: string
                   description: ''
-                  example: corporis
+                  example: adipisci
                 lastName:
                   type: string
                   description: ''
-                  example: corrupti
+                  example: quia
                 age:
                   type: string
                   description: ''
-                  example: voluptatum
+                  example: sed
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: elmore45@example.net
+                  example: gutkowski.elenor@example.com
               required:
                 - courseId
                 - firstName
@@ -403,7 +948,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the guest user.'
-        example: non
+        example: rerum
         required: true
         schema:
           type: string
@@ -426,27 +971,27 @@ paths:
                 userId:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 19
                 courseId:
                   type: integer
                   description: ''
-                  example: 7
+                  example: 2
                 numberOfMonth:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 19
                 dayOfMonth:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 16
                 startTime:
                   type: string
                   description: 'Must be a valid date in the format <code>H:i:s</code>.'
-                  example: '19:19:51'
+                  example: '00:23:36'
                 endTime:
                   type: string
                   description: 'Must be a valid date in the format <code>H:i:s</code>.'
-                  example: '19:19:51'
+                  example: '00:23:36'
               required:
                 - userId
                 - courseId
@@ -454,6 +999,27 @@ paths:
                 - dayOfMonth
                 - startTime
                 - endTime
+      security: []
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -473,7 +1039,7 @@ paths:
                 id:
                   type: string
                   description: ''
-                  example: consequatur
+                  example: voluptas
               required:
                 - id
       security: []
@@ -496,23 +1062,23 @@ paths:
                 numberOfMonth:
                   type: string
                   description: ''
-                  example: aliquid
+                  example: quibusdam
                 dayOfMonth:
                   type: string
                   description: ''
-                  example: temporibus
+                  example: ut
                 startTime:
                   type: string
                   description: ''
-                  example: eum
+                  example: in
                 endTime:
                   type: string
                   description: ''
-                  example: commodi
+                  example: explicabo
                 meetUrl:
                   type: string
                   description: ''
-                  example: possimus
+                  example: autem
               required:
                 - numberOfMonth
                 - dayOfMonth
@@ -525,11 +1091,37 @@ paths:
         in: path
         name: id
         description: 'The ID of the free lesson.'
-        example: pariatur
+        example: modi
         required: true
         schema:
           type: string
+  /api/create_event:
+    get:
+      summary: ''
+      operationId: getApiCreate_event
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'https://meet.google.com/mft-oddf-wse'
+      tags:
+        - Endpoints
+      security: []
 tags:
   -
     name: Endpoints
     description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.'
+security:
+  -
+    default: []

@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('cources_times', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_id')->constrained('cources')->onDelete('cascade');;
-            $table->integer('courseMonth');
-            $table->unsignedTinyInteger('day_of_month');
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->foreignId('courseId')->constrained('cources')->onDelete('cascade');
+            $table->date('SessionTimings')->nullable();
+            $table->integer('studentsCount')->default(0);
+            $table->time('startTime');
+            $table->time('endTime');
             $table->timestamps();
+            // Create a composite unique index to prevent duplicate startTime for the same date
+            $table->unique(['SessionTimings', 'startTime']);
         });
+        
     }
 
     /**

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('teacher');
             $table->text('description');
-            $table->text('image');
+            $table->text('imagePath');
             $table->decimal('price', 8, 2); // أو float('price', 8, 2)
             $table->integer('min_age');
             $table->integer('max_age');

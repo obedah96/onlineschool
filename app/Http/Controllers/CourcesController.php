@@ -14,7 +14,8 @@ class CourcesController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->has('id')) {
+        if ($request->has('id')) 
+        {
             
             $course = Cources::find($request->id);
         
@@ -31,12 +32,13 @@ class CourcesController extends Controller
                 ];
             }
         }
-        else {
+        else 
+        {
             $courses = Cources::paginate(5);
             $jsonData = [
                 'status' => 'success',
                 'data' => $courses,
-            ];
+            ];   
         }
         return response()->json([$jsonData]);
 }
@@ -62,7 +64,7 @@ class CourcesController extends Controller
             'title' => $request->title,
             'teacher' => $request->teacher,
             'description' => $request->description,
-            'image'=>$request->imagePath,
+            'imagePath'=>$request->imagePath,
             'price'=>$request->price,
             'course_outline'=>$request->course_outline,
             'duration_in_session'=>$request->duration_in_session,
@@ -136,7 +138,7 @@ class CourcesController extends Controller
         Storage::disk('public')->put($path, $request->image);
         */
             // تحديث مسار الصورة في قاعدة البيانات
-        $course->image = $request->inagePath;
+        $course->imagePath = $request->imagePath;
         $course->title = $request->title;
         $course->teacher=$request->teacher;
         $course->description = $request->description;
@@ -154,6 +156,23 @@ class CourcesController extends Controller
             'course : ' => $course
         ]);
     }
+      /**
+     * الحصول على الكورسات بناءً على العمر المدخل.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getCoursesByAge(Request $request)
+    {
+        // الحصول على العمر من طلب المستخدم
+        $age = $request->input('age');
+     
+        $courses = Cources::where('min_age', '<=', $age)
+                         ->where('max_age', '>=', $age)
+                         ->get();
+        // إرجاع النتيجة على شكل JSON
+        return response()->json($courses);
+    }
     /**
      * Remove the specified resource from storage.
      */
@@ -165,10 +184,10 @@ class CourcesController extends Controller
     }
 
     $imagePath = $course->image;
-
+    /*
     if (Storage::disk('public')->exists($imagePath)) {
         Storage::disk('public')->delete($imagePath);
-    }
+    }*/
 
     $course->forceDelete();
     return response()->json(['message' => 'course deleted']);

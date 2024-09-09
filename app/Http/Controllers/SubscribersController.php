@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\subscribers;
 use Illuminate\Http\Request;
+use App\Mail\VerifyEmail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class SubscribersController extends Controller
 {
@@ -40,26 +43,35 @@ class SubscribersController extends Controller
             return response()->json($sub);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create(Request $request)
     {
-        
+        // قواعد التحقق
         $rules = [
             'email' => 'required|email|unique:subscribers',
         ];
-
-        // تخصيص الرسائل إذا كانت هناك أخطاء
-        /*$messages = [
-            'email.unique' => 'this user already exsist',
-        ];*/
-
+    
         // التحقق من صحة البيانات
         $validated = $request->validate($rules);
-        if($validated){
-        subscribers::create($validated);
-        return response()->json(['message' => 'Subscriber created successfully.']);
+    
+        if ($validated) {
+            // إنشاء المستخدم
+            $subscriber = subscribers::create($validated);
+    
+            // توليد رمز التحقق
+            $verificationToken = Str::random(32);
+    
+            // حفظ رمز التحقق في قاعدة البيانات
+            $subscriber->verification_token = $verificationToken;
+            $subscriber->save();
+    
+            // إعداد رابط التحقق
+            $verificationUrl = url("/api/verify-subscriber-email/{$verificationToken}");
+    
+            // إرسال البريد الإلكتروني
+            Mail::to($subscriber->email)->send(new VerifyEmail($verificationUrl));
+    
+            return response()->json(['message' => 'Subscriber created successfully. Please check your email to verify your account.']);
         }
     }
 
@@ -104,6 +116,26 @@ class SubscribersController extends Controller
             return response()->json(['message'=>'update done','sub'=>$sub]);
             }
             
+    }
+    public function verify($token)
+    {
+        // البحث عن المشترك باستخدام رمز التحقق
+        $subscriber = subscribers::where('verification_token', $token)->first();
+
+        if ($subscriber) {
+            // تأكيد البريد الإلكتروني
+            $subscriber->update([
+                'email_verified_at' => now(),
+                'verification_token' => null,
+                'email_verified'=>1
+            ]);
+            $subscriber->save();
+
+            return response()->json(['message' => 'Email verified successfully.']);
+        }
+        else{
+            return response()->json(['message' => 'sorry Invalid or expired verification token.'], 400);
+        }
     }
 
     /**

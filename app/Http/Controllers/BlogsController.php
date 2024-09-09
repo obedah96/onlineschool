@@ -104,6 +104,7 @@ class BlogsController extends Controller
             'description' => $request->description,
             'ImagePath' => $request->imagePath,
         ]);
+        return response()->json(['message' => 'blog createc successfully']);
     }
 
 
@@ -115,10 +116,36 @@ class BlogsController extends Controller
      */
 
 
-    public function store(Request $request)
-    {
-        
-    }
+     public function store(Request $request)
+     {
+         // التحقق من صحة الطلب
+         $request->validate([
+             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+         ]);
+ 
+         // رفع الصورة وتخزينها في المسار المحدد
+         if ($request->file('image')) {
+             $image = $request->file('image');
+             $imageName = time() . '.' . $image->getClientOriginalExtension();
+             $ImagePath = $image->storeAs('blogs', $imageName, 'uploads');
+             $url = Storage::disk('uploads')->url($ImagePath);
+ 
+             // حفظ بيانات الصورة في قاعدة البيانات
+             $blog = new Blogs();
+             $blog->title = $request->title;
+             $blog->description= $request->description;
+             $blog->ImagePath = $url;
+             $blog->save();
+ 
+             return response()->json([
+                 'success' => 'Image uploaded successfully.',
+                 'image_name' => $imageName,
+                 'image_path' => $blog->ImagePath,
+             ]);
+         }
+ 
+         return response()->json(['error' => 'Image upload failed.'], 400);
+     }
 
 
     /**
@@ -177,6 +204,7 @@ class BlogsController extends Controller
             'blog' => $blog
         ]);
     }
+
 
 
         /**

@@ -14,7 +14,7 @@ class Cources extends Model
     'title',
     'teacher',
     'description',
-    'image',
+    'imagePath',
     'price',
     'course_outline',
     'duration_in_session',

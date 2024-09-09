@@ -35,13 +35,17 @@ return [
             'root' => '/app/storage',
             'throw' => false,
         ],
+        'uploads' => [
+        'driver' => 'local',
+        'root' => base_path('uploads'),
+        ],
 
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
-            'throw' => false,
+            
         ],
         /*
         'blogs' => [

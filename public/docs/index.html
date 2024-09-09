@@ -27,7 +27,7 @@
 
     <script>
         var tryItOutBaseUrl = "https://onlineschool-production.up.railway.app";
-        var useCsrf = Boolean();
+        var useCsrf = Boolean(1);
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
     <script src="../docs/js/tryitout-4.37.1.js"></script>
@@ -74,6 +74,9 @@
                                                     <li class="tocify-item level-2" data-unique="endpoints-POSTapi-blogs">
                                 <a href="#endpoints-POSTapi-blogs">Show the form for creating a new resource.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-blogs">
+                                <a href="#endpoints-GETapi-blogs">Display a listing of the resource.</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PUTapi-blogs--id-">
                                 <a href="#endpoints-PUTapi-blogs--id-">Update the specified resource in storage.</a>
                             </li>
@@ -81,7 +84,10 @@
                                 <a href="#endpoints-DELETEapi-blogs">Remove the specified resource from storage.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-subscribers">
-                                <a href="#endpoints-POSTapi-subscribers">Show the form for creating a new resource.</a>
+                                <a href="#endpoints-POSTapi-subscribers">POST api/subscribers</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-subscribers">
+                                <a href="#endpoints-GETapi-subscribers">Display a listing of the resource.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PUTapi-subscribers--id-">
                                 <a href="#endpoints-PUTapi-subscribers--id-">Update the specified resource in storage.</a>
@@ -92,6 +98,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-courses">
                                 <a href="#endpoints-POSTapi-courses">Show the form for creating a new resource.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-courses">
+                                <a href="#endpoints-GETapi-courses">Display a listing of the resource.</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PUTapi-courses--id-">
                                 <a href="#endpoints-PUTapi-courses--id-">Update the specified resource in storage.</a>
                             </li>
@@ -100,6 +109,9 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-courses_time">
                                 <a href="#endpoints-POSTapi-courses_time">Show the form for creating a new resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-courses_time">
+                                <a href="#endpoints-GETapi-courses_time">Display a listing of the resource.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PUTapi-courses_time--id-">
                                 <a href="#endpoints-PUTapi-courses_time--id-">Update the specified resource in storage.</a>
@@ -110,6 +122,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-guest_users">
                                 <a href="#endpoints-POSTapi-guest_users">Show the form for creating a new resource.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-guest_users">
+                                <a href="#endpoints-GETapi-guest_users">Display a listing of the resource.</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PUTapi-guest_users--id-">
                                 <a href="#endpoints-PUTapi-guest_users--id-">Update the specified resource in storage.</a>
                             </li>
@@ -119,11 +134,17 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-free_lessons">
                                 <a href="#endpoints-POSTapi-free_lessons">Show the form for creating a new resource.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-free_lessons">
+                                <a href="#endpoints-GETapi-free_lessons">Display a listing of the resource.</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PUTapi-free_lessons--id-">
                                 <a href="#endpoints-PUTapi-free_lessons--id-">Update the specified resource in storage.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-free_lessons">
                                 <a href="#endpoints-DELETEapi-free_lessons">Remove the specified resource from storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-create_event">
+                                <a href="#endpoints-GETapi-create_event">GET api/create_event</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -136,7 +157,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 28, 2024</li>
+        <li>Last updated: August 29, 2024</li>
     </ul>
 </div>
 
@@ -152,7 +173,9 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
         <h1 id="endpoints">Endpoints</h1>
 
@@ -175,8 +198,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"esse\",
-    \"description\": \"sed\"
+    \"title\": \"ex\",
+    \"description\": \"alias\"
 }"
 </code></pre></div>
 
@@ -192,8 +215,8 @@ const headers = {
 };
 
 let body = {
-    "title": "esse",
-    "description": "sed"
+    "title": "ex",
+    "description": "alias"
 };
 
 fetch(url, {
@@ -282,10 +305,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-blogs"
-               value="esse"
+               value="ex"
                data-component="body">
     <br>
-<p>Example: <code>esse</code></p>
+<p>Example: <code>ex</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -293,12 +316,210 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-blogs"
-               value="sed"
+               value="alias"
                data-component="body">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Example: <code>alias</code></p>
         </div>
         </form>
+
+                    <h2 id="endpoints-GETapi-blogs">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-blogs">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://onlineschool-production.up.railway.app/api/blogs" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/blogs"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-blogs">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;current_page&quot;: 1,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;title&quot;: &quot;fdgdfg&quot;,
+            &quot;description&quot;: &quot;fgdfgdf&quot;,
+            &quot;ImagePath&quot;: &quot;https://i.postimg.cc/jjfjwTWs/image.png&quot;,
+            &quot;created_at&quot;: &quot;2024-08-26T19:41:38.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T14:47:47.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;title&quot;: &quot;hhh&quot;,
+            &quot;description&quot;: &quot;first by postman&quot;,
+            &quot;ImagePath&quot;: &quot;https://onlineschool-production.up.railway.app/storage/blogs/1724705235.jpg&quot;,
+            &quot;created_at&quot;: &quot;2024-08-26T20:47:15.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-26T20:47:15.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;title&quot;: &quot;mmm&quot;,
+            &quot;description&quot;: &quot;first by postman&quot;,
+            &quot;ImagePath&quot;: &quot;https://onlineschool-production.up.railway.app/storage/blogs/1724705869.jpg&quot;,
+            &quot;created_at&quot;: &quot;2024-08-26T20:57:49.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-26T20:57:49.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;title&quot;: &quot;kkk&quot;,
+            &quot;description&quot;: &quot;first by postman&quot;,
+            &quot;ImagePath&quot;: &quot;uploads/images/blogs/1724743149.jpg&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T07:19:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T07:19:09.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;title&quot;: &quot;kkk&quot;,
+            &quot;description&quot;: &quot;first by postman&quot;,
+            &quot;ImagePath&quot;: &quot;uploads/images/blogs/1724746595.jpg&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T08:16:35.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T08:16:35.000000Z&quot;
+        }
+    ],
+    &quot;first_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs?page=1&quot;,
+    &quot;from&quot;: 1,
+    &quot;last_page&quot;: 2,
+    &quot;last_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs?page=2&quot;,
+    &quot;links&quot;: [
+        {
+            &quot;url&quot;: null,
+            &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+            &quot;active&quot;: false
+        },
+        {
+            &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs?page=1&quot;,
+            &quot;label&quot;: &quot;1&quot;,
+            &quot;active&quot;: true
+        },
+        {
+            &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs?page=2&quot;,
+            &quot;label&quot;: &quot;2&quot;,
+            &quot;active&quot;: false
+        },
+        {
+            &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs?page=2&quot;,
+            &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+            &quot;active&quot;: false
+        }
+    ],
+    &quot;next_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs?page=2&quot;,
+    &quot;path&quot;: &quot;https://onlineschool-production.up.railway.app/api/blogs&quot;,
+    &quot;per_page&quot;: 5,
+    &quot;prev_page_url&quot;: null,
+    &quot;to&quot;: 5,
+    &quot;total&quot;: 9
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-blogs" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-blogs"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-blogs"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-blogs" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-blogs">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-blogs" data-method="GET"
+      data-path="api/blogs"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-blogs', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-blogs"
+                    onclick="tryItOut('GETapi-blogs');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-blogs"
+                    onclick="cancelTryOut('GETapi-blogs');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-blogs"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/blogs</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-blogs"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-blogs"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
                     <h2 id="endpoints-PUTapi-blogs--id-">Update the specified resource in storage.</h2>
 
@@ -313,19 +534,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://onlineschool-production.up.railway.app/api/blogs/nisi" \
+    "https://onlineschool-production.up.railway.app/api/blogs/error" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"jmwdentdugu\",
-    \"description\": \"consequatur\"
+    \"title\": \"gaxdezpuzycfev\",
+    \"description\": \"ducimus\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://onlineschool-production.up.railway.app/api/blogs/nisi"
+    "https://onlineschool-production.up.railway.app/api/blogs/error"
 );
 
 const headers = {
@@ -334,8 +555,8 @@ const headers = {
 };
 
 let body = {
-    "title": "jmwdentdugu",
-    "description": "consequatur"
+    "title": "gaxdezpuzycfev",
+    "description": "ducimus"
 };
 
 fetch(url, {
@@ -424,10 +645,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-blogs--id-"
-               value="nisi"
+               value="error"
                data-component="url">
     <br>
-<p>The ID of the blog. Example: <code>nisi</code></p>
+<p>The ID of the blog. Example: <code>error</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -436,10 +657,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-blogs--id-"
-               value="jmwdentdugu"
+               value="gaxdezpuzycfev"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>jmwdentdugu</code></p>
+<p>Must not be greater than 255 characters. Example: <code>gaxdezpuzycfev</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -447,10 +668,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-blogs--id-"
-               value="consequatur"
+               value="ducimus"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>ducimus</code></p>
         </div>
         </form>
 
@@ -562,7 +783,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-subscribers">Show the form for creating a new resource.</h2>
+                    <h2 id="endpoints-POSTapi-subscribers">POST api/subscribers</h2>
 
 <p>
 </p>
@@ -579,7 +800,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"casandra.koss@example.net\"
+    \"email\": \"lkrajcik@example.net\"
 }"
 </code></pre></div>
 
@@ -595,7 +816,7 @@ const headers = {
 };
 
 let body = {
-    "email": "casandra.koss@example.net"
+    "email": "lkrajcik@example.net"
 };
 
 fetch(url, {
@@ -684,12 +905,230 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-subscribers"
-               value="casandra.koss@example.net"
+               value="lkrajcik@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>casandra.koss@example.net</code></p>
+<p>Must be a valid email address. Example: <code>lkrajcik@example.net</code></p>
         </div>
         </form>
+
+                    <h2 id="endpoints-GETapi-subscribers">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-subscribers">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://onlineschool-production.up.railway.app/api/subscribers" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/subscribers"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-subscribers">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;current_page&quot;: 1,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;email&quot;: &quot;obedag@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T13:33:47.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T13:33:47.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;email&quot;: &quot;obedahh@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T13:46:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T13:46:33.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;email&quot;: &quot;obedag1@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T14:51:10.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T14:51:10.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;email&quot;: &quot;obedahh11111111111@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T15:11:45.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T15:11:45.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;email&quot;: &quot;obedag111111111111111111111111@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T15:12:49.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T15:12:49.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;email&quot;: &quot;aaa@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T17:05:40.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T17:05:40.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;email&quot;: &quot;aaaaa@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T17:16:02.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T17:16:02.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;email&quot;: &quot;aaabbb@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T17:17:57.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T17:17:57.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;email&quot;: &quot;aannnna@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-27T17:21:19.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-27T17:21:19.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;email&quot;: &quot;obedahh12@gmail.com&quot;,
+            &quot;created_at&quot;: &quot;2024-08-28T06:27:58.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-08-28T06:27:58.000000Z&quot;
+        }
+    ],
+    &quot;first_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers?page=1&quot;,
+    &quot;from&quot;: 1,
+    &quot;last_page&quot;: 2,
+    &quot;last_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers?page=2&quot;,
+    &quot;links&quot;: [
+        {
+            &quot;url&quot;: null,
+            &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+            &quot;active&quot;: false
+        },
+        {
+            &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers?page=1&quot;,
+            &quot;label&quot;: &quot;1&quot;,
+            &quot;active&quot;: true
+        },
+        {
+            &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers?page=2&quot;,
+            &quot;label&quot;: &quot;2&quot;,
+            &quot;active&quot;: false
+        },
+        {
+            &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers?page=2&quot;,
+            &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+            &quot;active&quot;: false
+        }
+    ],
+    &quot;next_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers?page=2&quot;,
+    &quot;path&quot;: &quot;https://onlineschool-production.up.railway.app/api/subscribers&quot;,
+    &quot;per_page&quot;: 10,
+    &quot;prev_page_url&quot;: null,
+    &quot;to&quot;: 10,
+    &quot;total&quot;: 19
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-subscribers" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-subscribers"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-subscribers"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-subscribers" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-subscribers">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-subscribers" data-method="GET"
+      data-path="api/subscribers"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-subscribers', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-subscribers"
+                    onclick="tryItOut('GETapi-subscribers');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-subscribers"
+                    onclick="cancelTryOut('GETapi-subscribers');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-subscribers"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/subscribers</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-subscribers"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-subscribers"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
                     <h2 id="endpoints-PUTapi-subscribers--id-">Update the specified resource in storage.</h2>
 
@@ -704,18 +1143,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://onlineschool-production.up.railway.app/api/subscribers/qui" \
+    "https://onlineschool-production.up.railway.app/api/subscribers/quaerat" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"sint\"
+    \"email\": \"quae\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://onlineschool-production.up.railway.app/api/subscribers/qui"
+    "https://onlineschool-production.up.railway.app/api/subscribers/quaerat"
 );
 
 const headers = {
@@ -724,7 +1163,7 @@ const headers = {
 };
 
 let body = {
-    "email": "sint"
+    "email": "quae"
 };
 
 fetch(url, {
@@ -813,10 +1252,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-subscribers--id-"
-               value="qui"
+               value="quaerat"
                data-component="url">
     <br>
-<p>The ID of the subscriber. Example: <code>qui</code></p>
+<p>The ID of the subscriber. Example: <code>quaerat</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -825,10 +1264,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="PUTapi-subscribers--id-"
-               value="sint"
+               value="quae"
                data-component="body">
     <br>
-<p>Example: <code>sint</code></p>
+<p>Example: <code>quae</code></p>
         </div>
         </form>
 
@@ -957,8 +1396,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"et\",
-    \"description\": \"necessitatibus\"
+    \"title\": \"consequuntur\",
+    \"description\": \"ea\"
 }"
 </code></pre></div>
 
@@ -974,8 +1413,8 @@ const headers = {
 };
 
 let body = {
-    "title": "et",
-    "description": "necessitatibus"
+    "title": "consequuntur",
+    "description": "ea"
 };
 
 fetch(url, {
@@ -1064,10 +1503,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-courses"
-               value="et"
+               value="consequuntur"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>consequuntur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1075,12 +1514,169 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-courses"
-               value="necessitatibus"
+               value="ea"
                data-component="body">
     <br>
-<p>Example: <code>necessitatibus</code></p>
+<p>Example: <code>ea</code></p>
         </div>
         </form>
+
+                    <h2 id="endpoints-GETapi-courses">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-courses">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://onlineschool-production.up.railway.app/api/courses" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/courses"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-courses">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;status&quot;: &quot;success&quot;,
+        &quot;data&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;data&quot;: [],
+            &quot;first_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/courses?page=1&quot;,
+            &quot;from&quot;: null,
+            &quot;last_page&quot;: 1,
+            &quot;last_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/courses?page=1&quot;,
+            &quot;links&quot;: [
+                {
+                    &quot;url&quot;: null,
+                    &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                    &quot;active&quot;: false
+                },
+                {
+                    &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/courses?page=1&quot;,
+                    &quot;label&quot;: &quot;1&quot;,
+                    &quot;active&quot;: true
+                },
+                {
+                    &quot;url&quot;: null,
+                    &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                    &quot;active&quot;: false
+                }
+            ],
+            &quot;next_page_url&quot;: null,
+            &quot;path&quot;: &quot;https://onlineschool-production.up.railway.app/api/courses&quot;,
+            &quot;per_page&quot;: 5,
+            &quot;prev_page_url&quot;: null,
+            &quot;to&quot;: null,
+            &quot;total&quot;: 0
+        }
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-courses" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-courses"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-courses"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-courses" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-courses">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-courses" data-method="GET"
+      data-path="api/courses"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-courses', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-courses"
+                    onclick="tryItOut('GETapi-courses');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-courses"
+                    onclick="cancelTryOut('GETapi-courses');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-courses"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/courses</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-courses"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-courses"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
                     <h2 id="endpoints-PUTapi-courses--id-">Update the specified resource in storage.</h2>
 
@@ -1095,19 +1691,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://onlineschool-production.up.railway.app/api/courses/sed" \
+    "https://onlineschool-production.up.railway.app/api/courses/tempora" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"kuwxxurnuhuygkn\",
-    \"description\": \"neque\"
+    \"title\": \"psxtwauaow\",
+    \"description\": \"veritatis\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://onlineschool-production.up.railway.app/api/courses/sed"
+    "https://onlineschool-production.up.railway.app/api/courses/tempora"
 );
 
 const headers = {
@@ -1116,8 +1712,8 @@ const headers = {
 };
 
 let body = {
-    "title": "kuwxxurnuhuygkn",
-    "description": "neque"
+    "title": "psxtwauaow",
+    "description": "veritatis"
 };
 
 fetch(url, {
@@ -1206,10 +1802,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-courses--id-"
-               value="sed"
+               value="tempora"
                data-component="url">
     <br>
-<p>The ID of the course. Example: <code>sed</code></p>
+<p>The ID of the course. Example: <code>tempora</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1218,10 +1814,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-courses--id-"
-               value="kuwxxurnuhuygkn"
+               value="psxtwauaow"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>kuwxxurnuhuygkn</code></p>
+<p>Must not be greater than 255 characters. Example: <code>psxtwauaow</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1229,10 +1825,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-courses--id-"
-               value="neque"
+               value="veritatis"
                data-component="body">
     <br>
-<p>Example: <code>neque</code></p>
+<p>Example: <code>veritatis</code></p>
         </div>
         </form>
 
@@ -1361,11 +1957,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"course_id\": \"animi\",
-    \"courseMonth\": \"possimus\",
-    \"start_time\": \"sed\",
-    \"end_time\": \"commodi\",
-    \"day_of_month\": \"tempore\"
+    \"course_id\": \"qui\",
+    \"courseMonth\": \"id\",
+    \"start_time\": \"inventore\",
+    \"end_time\": \"dignissimos\",
+    \"day_of_month\": \"quam\"
 }"
 </code></pre></div>
 
@@ -1381,11 +1977,11 @@ const headers = {
 };
 
 let body = {
-    "course_id": "animi",
-    "courseMonth": "possimus",
-    "start_time": "sed",
-    "end_time": "commodi",
-    "day_of_month": "tempore"
+    "course_id": "qui",
+    "courseMonth": "id",
+    "start_time": "inventore",
+    "end_time": "dignissimos",
+    "day_of_month": "quam"
 };
 
 fetch(url, {
@@ -1474,10 +2070,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="course_id"                data-endpoint="POSTapi-courses_time"
-               value="animi"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>animi</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>courseMonth</code></b>&nbsp;&nbsp;
@@ -1485,10 +2081,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="courseMonth"                data-endpoint="POSTapi-courses_time"
-               value="possimus"
+               value="id"
                data-component="body">
     <br>
-<p>Example: <code>possimus</code></p>
+<p>Example: <code>id</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_time</code></b>&nbsp;&nbsp;
@@ -1496,10 +2092,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="start_time"                data-endpoint="POSTapi-courses_time"
-               value="sed"
+               value="inventore"
                data-component="body">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Example: <code>inventore</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end_time</code></b>&nbsp;&nbsp;
@@ -1507,10 +2103,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="end_time"                data-endpoint="POSTapi-courses_time"
-               value="commodi"
+               value="dignissimos"
                data-component="body">
     <br>
-<p>Example: <code>commodi</code></p>
+<p>Example: <code>dignissimos</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>day_of_month</code></b>&nbsp;&nbsp;
@@ -1518,12 +2114,136 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="day_of_month"                data-endpoint="POSTapi-courses_time"
-               value="tempore"
+               value="quam"
                data-component="body">
     <br>
-<p>Example: <code>tempore</code></p>
+<p>Example: <code>quam</code></p>
         </div>
         </form>
+
+                    <h2 id="endpoints-GETapi-courses_time">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-courses_time">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://onlineschool-production.up.railway.app/api/courses_time" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/courses_time"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-courses_time">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Server Error&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-courses_time" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-courses_time"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-courses_time"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-courses_time" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-courses_time">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-courses_time" data-method="GET"
+      data-path="api/courses_time"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-courses_time', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-courses_time"
+                    onclick="tryItOut('GETapi-courses_time');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-courses_time"
+                    onclick="cancelTryOut('GETapi-courses_time');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-courses_time"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/courses_time</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-courses_time"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-courses_time"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
                     <h2 id="endpoints-PUTapi-courses_time--id-">Update the specified resource in storage.</h2>
 
@@ -1538,14 +2258,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://onlineschool-production.up.railway.app/api/courses_time/dolor" \
+    "https://onlineschool-production.up.railway.app/api/courses_time/quidem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://onlineschool-production.up.railway.app/api/courses_time/dolor"
+    "https://onlineschool-production.up.railway.app/api/courses_time/quidem"
 );
 
 const headers = {
@@ -1638,10 +2358,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-courses_time--id-"
-               value="dolor"
+               value="quidem"
                data-component="url">
     <br>
-<p>The ID of the courses time. Example: <code>dolor</code></p>
+<p>The ID of the courses time. Example: <code>quidem</code></p>
             </div>
                     </form>
 
@@ -1770,11 +2490,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"courseId\": \"porro\",
-    \"firstName\": \"voluptate\",
-    \"lastName\": \"quae\",
-    \"age\": \"laborum\",
-    \"email\": \"hauck.neva@example.com\"
+    \"courseId\": \"magnam\",
+    \"firstName\": \"quam\",
+    \"lastName\": \"sit\",
+    \"age\": \"aut\",
+    \"email\": \"gcronin@example.org\"
 }"
 </code></pre></div>
 
@@ -1790,11 +2510,11 @@ const headers = {
 };
 
 let body = {
-    "courseId": "porro",
-    "firstName": "voluptate",
-    "lastName": "quae",
-    "age": "laborum",
-    "email": "hauck.neva@example.com"
+    "courseId": "magnam",
+    "firstName": "quam",
+    "lastName": "sit",
+    "age": "aut",
+    "email": "gcronin@example.org"
 };
 
 fetch(url, {
@@ -1883,10 +2603,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="courseId"                data-endpoint="POSTapi-guest_users"
-               value="porro"
+               value="magnam"
                data-component="body">
     <br>
-<p>Example: <code>porro</code></p>
+<p>Example: <code>magnam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>firstName</code></b>&nbsp;&nbsp;
@@ -1894,10 +2614,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="firstName"                data-endpoint="POSTapi-guest_users"
-               value="voluptate"
+               value="quam"
                data-component="body">
     <br>
-<p>Example: <code>voluptate</code></p>
+<p>Example: <code>quam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>lastName</code></b>&nbsp;&nbsp;
@@ -1905,10 +2625,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="lastName"                data-endpoint="POSTapi-guest_users"
-               value="quae"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>quae</code></p>
+<p>Example: <code>sit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>age</code></b>&nbsp;&nbsp;
@@ -1916,10 +2636,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="age"                data-endpoint="POSTapi-guest_users"
-               value="laborum"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>laborum</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1927,12 +2647,169 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-guest_users"
-               value="hauck.neva@example.com"
+               value="gcronin@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>hauck.neva@example.com</code></p>
+<p>Must be a valid email address. Example: <code>gcronin@example.org</code></p>
         </div>
         </form>
+
+                    <h2 id="endpoints-GETapi-guest_users">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-guest_users">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://onlineschool-production.up.railway.app/api/guest_users" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/guest_users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-guest_users">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;status&quot;: &quot;success&quot;,
+        &quot;data&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;data&quot;: [],
+            &quot;first_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/guest_users?page=1&quot;,
+            &quot;from&quot;: null,
+            &quot;last_page&quot;: 1,
+            &quot;last_page_url&quot;: &quot;https://onlineschool-production.up.railway.app/api/guest_users?page=1&quot;,
+            &quot;links&quot;: [
+                {
+                    &quot;url&quot;: null,
+                    &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                    &quot;active&quot;: false
+                },
+                {
+                    &quot;url&quot;: &quot;https://onlineschool-production.up.railway.app/api/guest_users?page=1&quot;,
+                    &quot;label&quot;: &quot;1&quot;,
+                    &quot;active&quot;: true
+                },
+                {
+                    &quot;url&quot;: null,
+                    &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                    &quot;active&quot;: false
+                }
+            ],
+            &quot;next_page_url&quot;: null,
+            &quot;path&quot;: &quot;https://onlineschool-production.up.railway.app/api/guest_users&quot;,
+            &quot;per_page&quot;: 5,
+            &quot;prev_page_url&quot;: null,
+            &quot;to&quot;: null,
+            &quot;total&quot;: 0
+        }
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-guest_users" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-guest_users"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-guest_users"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-guest_users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-guest_users">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-guest_users" data-method="GET"
+      data-path="api/guest_users"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-guest_users', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-guest_users"
+                    onclick="tryItOut('GETapi-guest_users');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-guest_users"
+                    onclick="cancelTryOut('GETapi-guest_users');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-guest_users"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/guest_users</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-guest_users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
                     <h2 id="endpoints-PUTapi-guest_users--id-">Update the specified resource in storage.</h2>
 
@@ -1947,22 +2824,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://onlineschool-production.up.railway.app/api/guest_users/non" \
+    "https://onlineschool-production.up.railway.app/api/guest_users/rerum" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"courseId\": \"aut\",
-    \"firstName\": \"corporis\",
-    \"lastName\": \"corrupti\",
-    \"age\": \"voluptatum\",
-    \"email\": \"elmore45@example.net\"
+    \"courseId\": \"maxime\",
+    \"firstName\": \"adipisci\",
+    \"lastName\": \"quia\",
+    \"age\": \"sed\",
+    \"email\": \"gutkowski.elenor@example.com\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://onlineschool-production.up.railway.app/api/guest_users/non"
+    "https://onlineschool-production.up.railway.app/api/guest_users/rerum"
 );
 
 const headers = {
@@ -1971,11 +2848,11 @@ const headers = {
 };
 
 let body = {
-    "courseId": "aut",
-    "firstName": "corporis",
-    "lastName": "corrupti",
-    "age": "voluptatum",
-    "email": "elmore45@example.net"
+    "courseId": "maxime",
+    "firstName": "adipisci",
+    "lastName": "quia",
+    "age": "sed",
+    "email": "gutkowski.elenor@example.com"
 };
 
 fetch(url, {
@@ -2064,10 +2941,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-guest_users--id-"
-               value="non"
+               value="rerum"
                data-component="url">
     <br>
-<p>The ID of the guest user. Example: <code>non</code></p>
+<p>The ID of the guest user. Example: <code>rerum</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2076,10 +2953,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="courseId"                data-endpoint="PUTapi-guest_users--id-"
-               value="aut"
+               value="maxime"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>maxime</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>firstName</code></b>&nbsp;&nbsp;
@@ -2087,10 +2964,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="firstName"                data-endpoint="PUTapi-guest_users--id-"
-               value="corporis"
+               value="adipisci"
                data-component="body">
     <br>
-<p>Example: <code>corporis</code></p>
+<p>Example: <code>adipisci</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>lastName</code></b>&nbsp;&nbsp;
@@ -2098,10 +2975,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="lastName"                data-endpoint="PUTapi-guest_users--id-"
-               value="corrupti"
+               value="quia"
                data-component="body">
     <br>
-<p>Example: <code>corrupti</code></p>
+<p>Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>age</code></b>&nbsp;&nbsp;
@@ -2109,10 +2986,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="age"                data-endpoint="PUTapi-guest_users--id-"
-               value="voluptatum"
+               value="sed"
                data-component="body">
     <br>
-<p>Example: <code>voluptatum</code></p>
+<p>Example: <code>sed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -2120,10 +2997,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="PUTapi-guest_users--id-"
-               value="elmore45@example.net"
+               value="gutkowski.elenor@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>elmore45@example.net</code></p>
+<p>Must be a valid email address. Example: <code>gutkowski.elenor@example.com</code></p>
         </div>
         </form>
 
@@ -2144,7 +3021,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id\": \"consequatur\"
+    \"id\": \"quam\"
 }"
 </code></pre></div>
 
@@ -2160,7 +3037,7 @@ const headers = {
 };
 
 let body = {
-    "id": "consequatur"
+    "id": "quam"
 };
 
 fetch(url, {
@@ -2249,10 +3126,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-guest_users"
-               value="consequatur"
+               value="quam"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>quam</code></p>
         </div>
         </form>
 
@@ -2273,12 +3150,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"userId\": 2,
-    \"courseId\": 7,
-    \"numberOfMonth\": 4,
-    \"dayOfMonth\": 11,
-    \"startTime\": \"19:19:51\",
-    \"endTime\": \"19:19:51\"
+    \"userId\": 19,
+    \"courseId\": 2,
+    \"numberOfMonth\": 19,
+    \"dayOfMonth\": 16,
+    \"startTime\": \"00:23:36\",
+    \"endTime\": \"00:23:36\"
 }"
 </code></pre></div>
 
@@ -2294,12 +3171,12 @@ const headers = {
 };
 
 let body = {
-    "userId": 2,
-    "courseId": 7,
-    "numberOfMonth": 4,
-    "dayOfMonth": 11,
-    "startTime": "19:19:51",
-    "endTime": "19:19:51"
+    "userId": 19,
+    "courseId": 2,
+    "numberOfMonth": 19,
+    "dayOfMonth": 16,
+    "startTime": "00:23:36",
+    "endTime": "00:23:36"
 };
 
 fetch(url, {
@@ -2388,10 +3265,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="userId"                data-endpoint="POSTapi-free_lessons"
-               value="2"
+               value="19"
                data-component="body">
     <br>
-<p>Example: <code>2</code></p>
+<p>Example: <code>19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>courseId</code></b>&nbsp;&nbsp;
@@ -2399,10 +3276,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="courseId"                data-endpoint="POSTapi-free_lessons"
-               value="7"
+               value="2"
                data-component="body">
     <br>
-<p>Example: <code>7</code></p>
+<p>Example: <code>2</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>numberOfMonth</code></b>&nbsp;&nbsp;
@@ -2410,10 +3287,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="numberOfMonth"                data-endpoint="POSTapi-free_lessons"
-               value="4"
+               value="19"
                data-component="body">
     <br>
-<p>Example: <code>4</code></p>
+<p>Example: <code>19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>dayOfMonth</code></b>&nbsp;&nbsp;
@@ -2421,10 +3298,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="dayOfMonth"                data-endpoint="POSTapi-free_lessons"
-               value="11"
+               value="16"
                data-component="body">
     <br>
-<p>Example: <code>11</code></p>
+<p>Example: <code>16</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>startTime</code></b>&nbsp;&nbsp;
@@ -2432,10 +3309,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="startTime"                data-endpoint="POSTapi-free_lessons"
-               value="19:19:51"
+               value="00:23:36"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i:s</code>. Example: <code>19:19:51</code></p>
+<p>Must be a valid date in the format <code>H:i:s</code>. Example: <code>00:23:36</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>endTime</code></b>&nbsp;&nbsp;
@@ -2443,12 +3320,136 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="endTime"                data-endpoint="POSTapi-free_lessons"
-               value="19:19:51"
+               value="00:23:36"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i:s</code>. Example: <code>19:19:51</code></p>
+<p>Must be a valid date in the format <code>H:i:s</code>. Example: <code>00:23:36</code></p>
         </div>
         </form>
+
+                    <h2 id="endpoints-GETapi-free_lessons">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-free_lessons">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://onlineschool-production.up.railway.app/api/free_lessons" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/free_lessons"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-free_lessons">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Server Error&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-free_lessons" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-free_lessons"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-free_lessons"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-free_lessons" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-free_lessons">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-free_lessons" data-method="GET"
+      data-path="api/free_lessons"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-free_lessons', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-free_lessons"
+                    onclick="tryItOut('GETapi-free_lessons');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-free_lessons"
+                    onclick="cancelTryOut('GETapi-free_lessons');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-free_lessons"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/free_lessons</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-free_lessons"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
                     <h2 id="endpoints-PUTapi-free_lessons--id-">Update the specified resource in storage.</h2>
 
@@ -2463,22 +3464,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://onlineschool-production.up.railway.app/api/free_lessons/pariatur" \
+    "https://onlineschool-production.up.railway.app/api/free_lessons/modi" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"numberOfMonth\": \"aliquid\",
-    \"dayOfMonth\": \"temporibus\",
-    \"startTime\": \"eum\",
-    \"endTime\": \"commodi\",
-    \"meetUrl\": \"possimus\"
+    \"numberOfMonth\": \"quibusdam\",
+    \"dayOfMonth\": \"ut\",
+    \"startTime\": \"in\",
+    \"endTime\": \"explicabo\",
+    \"meetUrl\": \"autem\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://onlineschool-production.up.railway.app/api/free_lessons/pariatur"
+    "https://onlineschool-production.up.railway.app/api/free_lessons/modi"
 );
 
 const headers = {
@@ -2487,11 +3488,11 @@ const headers = {
 };
 
 let body = {
-    "numberOfMonth": "aliquid",
-    "dayOfMonth": "temporibus",
-    "startTime": "eum",
-    "endTime": "commodi",
-    "meetUrl": "possimus"
+    "numberOfMonth": "quibusdam",
+    "dayOfMonth": "ut",
+    "startTime": "in",
+    "endTime": "explicabo",
+    "meetUrl": "autem"
 };
 
 fetch(url, {
@@ -2580,10 +3581,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-free_lessons--id-"
-               value="pariatur"
+               value="modi"
                data-component="url">
     <br>
-<p>The ID of the free lesson. Example: <code>pariatur</code></p>
+<p>The ID of the free lesson. Example: <code>modi</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2592,10 +3593,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="numberOfMonth"                data-endpoint="PUTapi-free_lessons--id-"
-               value="aliquid"
+               value="quibusdam"
                data-component="body">
     <br>
-<p>Example: <code>aliquid</code></p>
+<p>Example: <code>quibusdam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>dayOfMonth</code></b>&nbsp;&nbsp;
@@ -2603,10 +3604,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="dayOfMonth"                data-endpoint="PUTapi-free_lessons--id-"
-               value="temporibus"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>temporibus</code></p>
+<p>Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>startTime</code></b>&nbsp;&nbsp;
@@ -2614,10 +3615,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="startTime"                data-endpoint="PUTapi-free_lessons--id-"
-               value="eum"
+               value="in"
                data-component="body">
     <br>
-<p>Example: <code>eum</code></p>
+<p>Example: <code>in</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>endTime</code></b>&nbsp;&nbsp;
@@ -2625,10 +3626,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="endTime"                data-endpoint="PUTapi-free_lessons--id-"
-               value="commodi"
+               value="explicabo"
                data-component="body">
     <br>
-<p>Example: <code>commodi</code></p>
+<p>Example: <code>explicabo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>meetUrl</code></b>&nbsp;&nbsp;
@@ -2636,10 +3637,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="meetUrl"                data-endpoint="PUTapi-free_lessons--id-"
-               value="possimus"
+               value="autem"
                data-component="body">
     <br>
-<p>Example: <code>possimus</code></p>
+<p>Example: <code>autem</code></p>
         </div>
         </form>
 
@@ -2660,7 +3661,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id\": \"consequatur\"
+    \"id\": \"voluptas\"
 }"
 </code></pre></div>
 
@@ -2676,7 +3677,7 @@ const headers = {
 };
 
 let body = {
-    "id": "consequatur"
+    "id": "voluptas"
 };
 
 fetch(url, {
@@ -2765,12 +3766,134 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-free_lessons"
-               value="consequatur"
+               value="voluptas"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>voluptas</code></p>
         </div>
         </form>
+
+                    <h2 id="endpoints-GETapi-create_event">GET api/create_event</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-create_event">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://onlineschool-production.up.railway.app/api/create_event" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://onlineschool-production.up.railway.app/api/create_event"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-create_event">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">content-type: text/html; charset=UTF-8
+cache-control: no-cache, private
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">https://meet.google.com/mft-oddf-wse</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-create_event" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-create_event"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-create_event"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-create_event" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-create_event">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-create_event" data-method="GET"
+      data-path="api/create_event"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-create_event', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-create_event"
+                    onclick="tryItOut('GETapi-create_event');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-create_event"
+                    onclick="cancelTryOut('GETapi-create_event');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-create_event"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/create_event</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-create_event"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-create_event"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
             
 

@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subscribers', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->nullable(); 
-            $table->timestamp('email_verified_at')->nullable();
-            $table->text('verification_token')->nullable();
-            $table->tinyInteger('email_verified')->default(0);
-
+            $table->foreignId('userId')->constrained('users')->onDelete('cascade');
+            $table->text('description');
+            $table->tinyInteger('rating')->unsigned(); 
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subscribers');
+        Schema::dropIfExists('testimonials');
     }
 };

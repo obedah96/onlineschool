@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\GuestUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Mail\VerifyEmail;
+use Illuminate\Support\Facades\Mail;
 
 class GuestUsersController extends Controller
 {
@@ -43,22 +46,30 @@ class GuestUsersController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'courseId' => 'required',
             'firstName' => 'required',
             'lastName' => 'required',
             'age' => 'required',
-            'email' => 'required|email'
+            'email' => 'required|email|unique:guest_users'
         ]);
-        $gestUser=GuestUsers::create([
-            'courseId' => $request->courseId,
+        $verificationToken = Str::random(32);
+        
+        $guestUser=GuestUsers::create([
             'firstName' => $request->firstName,
             'lastName' => $request->lastName,
             'age' => $request->age,
             'email' => $request->email,
+            'verification_token' => $verificationToken
         ]);
+          // إعداد رابط التحقق
+          $verificationUrl = url("/api/verify-guest-email/{$verificationToken}");
+    
+          // إرسال البريد الإلكتروني
+          Mail::to($guestUser->email)->send(new VerifyEmail($verificationUrl));
+        
         return response()->json([
-            'message' => 'user created successfully'
-            ,'data'=>$gestUser
+            'message' => 'user created successfully',
+            'id'=>$guestUser->id,
+            'data'=>$guestUser
             ]);
     }
 
@@ -112,6 +123,26 @@ class GuestUsersController extends Controller
                     'data'=>$gestUser
             ]);
     }
+    public function verify($token)
+    {
+        // البحث عن المستخدم الضيف باستخدام رمز التحقق
+        $guestUser = GuestUsers::where('verification_token', $token)->first();
+
+        if ($guestUser) {
+            // تأكيد البريد الإلكتروني
+            $guestUser->update([
+                'email_verified_at' => now(),
+                'verification_token' => null,
+                'email_verified' => 1
+            ]);
+            $guestUser->save();
+
+            return response()->json(['message' => 'Email verified successfully.']);
+        }
+
+        return response()->json(['message' => 'Invalid or expired verification token.'], 400);
+    }
+
 
     /**
      * Remove the specified resource from storage.

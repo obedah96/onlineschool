@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FreeLessons extends Model
+class Testimonial extends Model
 {
     use HasFactory;
-    protected $fillable =[
+    protected $fillable = [
         'userId',
-        'courseId',
-        'sessionTime',
-        'meetUrl',
-        'eventId',
-    ];
-   
+        'description',
+        'rating'
+    ] ;
 }
